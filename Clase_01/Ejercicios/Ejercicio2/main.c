@@ -17,20 +17,14 @@ int main()
         if(numero>mayor){
             mayor=numero;
         }
-        if(numero>mayor){
-            mayor=numero;
-        }
         //Menor
-        if(numero<menor){
-            menor=numero;
-        }
         if(numero<menor){
             menor=numero;
         }
         printf("\nEl mayor es: %d", mayor);
         printf("\nEl menor es: %d\n", menor);
 
-        printf("\n¿Desea continuar? (0 para salir): ");
+        printf("\nÂ¿Desea continuar? (0 para salir): ");
         scanf("%d", &respuesta);
     }
     return 0;
