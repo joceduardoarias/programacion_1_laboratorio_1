@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1535677012 source:c:\users\yanni\desktop\programacion_1_laboratorio_1\trabajos practicos\tp1\trabajo practico nº1\main.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+
