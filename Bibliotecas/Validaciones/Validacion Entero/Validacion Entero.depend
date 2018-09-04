@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1536018938 source:c:\users\alumno\desktop\programacion_1_laboratorio_1\bibliotecas\validaciones\validacion entero\main.c
+	<stdio.h>
+	<stdlib.h>
+
+1536019220 source:c:\users\alumno\desktop\programacion_1_laboratorio_1\bibliotecas\validaciones\validacion entero\alegria.c
+	<stdio.h>
+	<stdlib.h>
+	"Alegria.h"
+
+1536018899 c:\users\alumno\desktop\programacion_1_laboratorio_1\bibliotecas\validaciones\validacion entero\alegria.h
+
