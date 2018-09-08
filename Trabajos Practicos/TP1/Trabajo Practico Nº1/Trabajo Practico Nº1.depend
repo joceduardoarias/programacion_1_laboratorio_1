@@ -17,3 +17,16 @@
 
 1536100994 c:\users\néstor\desktop\prog y lab 2018\trabajos practicos\tp1\trabajo practico nº1\funciones.h
 
+1536355982 source:c:\users\alumno\desktop\programacion_1_laboratorio_1\trabajos practicos\tp1\trabajo practico nº1\funciones.c
+	<stdio.h>
+	<stdlib.h>
+	"funciones.h"
+
+1536355982 c:\users\alumno\desktop\programacion_1_laboratorio_1\trabajos practicos\tp1\trabajo practico nº1\funciones.h
+
+1536355982 source:c:\users\alumno\desktop\programacion_1_laboratorio_1\trabajos practicos\tp1\trabajo practico nº1\main.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	"funciones.h"
+
