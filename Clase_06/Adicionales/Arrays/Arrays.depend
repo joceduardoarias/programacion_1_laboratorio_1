@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1536585165 source:d:\alegria_n\programacion_1_laboratorio_1\clase_06\adicionales\arrays\main.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+
