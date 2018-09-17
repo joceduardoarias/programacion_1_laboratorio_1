@@ -38,13 +38,11 @@ int main()
 
     printf("Ingrese Legajo: ");
     scanf("%d", &empleadoCinco.legajo);
-
     printf("Ingrese nombre: ");
     fflush(stdin);
     fgets(empleadoCinco.nombre, 20, stdin);
     cantidad = strlen(empleadoCinco.nombre);
     empleadoCinco.nombre[cantidad-1]='\0';
-
     printf("Ingrese sexo: ");
     fflush(stdin);
     scanf("%c", &empleadoCinco.sexo);
