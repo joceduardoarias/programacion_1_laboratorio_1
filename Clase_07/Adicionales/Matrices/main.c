@@ -5,13 +5,11 @@
 #include "funciones.h"
 #define TAM 3
 
-int altaUsuario(char nombre[][31], char apellido[][31], int legajo[], int edad[], int isEmpty[], int tam);
-int mostrarUsuario(char nombre[][31], char apellido[][31], int legajo[], int edad[], int isEmpty[], int legajoAux, int tam);
 
 int main()
 {
     char seguir;
-    int cantidad;
+    //int cantidad;
     int auxiliar;
 
     char nombre[TAM][31], nombreAux[31];
@@ -39,22 +37,7 @@ int main()
             }
             else
             {
-                printf("Ingrese nombre: ");
-                fflush(stdin);
-                fgets(nombre[indice], sizeof(nombre[indice]), stdin);
-                cantidad = strlen(nombre[indice]);
-                nombre[indice][cantidad-1] = '\0';
-                printf("Ingrese apellido: ");
-                fflush(stdin);
-                fgets(apellido[indice], sizeof(apellido[indice]), stdin);
-                cantidad = strlen(apellido[indice]);
-                apellido[indice][cantidad-1] = '\0';
-                fflush(stdin);
-                printf("Ingrese legajo: ");
-                scanf("%d", &legajo[indice]);
-                printf("Ingrese edad: ");
-                scanf("%d", &edad[indice]);
-                isEmpty[indice]=0;
+                altaUsuario(nombre, apellido, legajo, edad, isEmpty, TAM, indice);
                 system("pause");
                 break;
             case '2':
@@ -137,11 +120,13 @@ int main()
                 scanf("%d", &auxiliar);
                 legajoAux=auxiliar;
                 auxiliar = mostrarUsuario(nombre, apellido, legajo, edad, isEmpty, legajoAux, TAM);
-                if(auxiliar==0){
+                if(auxiliar==0)
+                {
                     mostrarUsuario(nombre, apellido, legajo, edad, isEmpty, legajoAux, TAM);
 
                 }
-                else{
+                else
+                {
                     printf("No se encuentra usuario\n");
                 }
                 system("pause");
@@ -166,24 +151,3 @@ int main()
     return 0;
 }
 
-int mostrarUsuario(char nombre[][31], char apellido[][31], int legajo[], int edad[], int isEmpty[], int legajoAux, int tam)
-{
-    int retorno = -1;
-    printf("Legajo\tApellido  \tNombre  \tEdad\n\n");
-    for(int i=0; i<TAM; i++)
-    {
-        if(legajoAux==legajo[i] && isEmpty[i]==0)
-        {
-            printf("\n%d\t%s\t\t%s\t\t%d", legajo[i], apellido[i], nombre[i], edad[i]);
-        }
-        return 0;
-        break;
-    }
-    printf("\n\n");
-    return retorno;
-}
-
-
-int altaUsuario(char nombre[][31], char apellido[][31], int legajo[], int edad[], int isEmpty[], int tam){
-
-}

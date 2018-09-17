@@ -1,17 +1,17 @@
 # depslib dependency file v1.0
-1536764887 source:d:\nestor_a\programacion_1_laboratorio_1\clase_07\adicionales\matrices\main.c
+1536765638 source:d:\nestor_a\programacion_1_laboratorio_1\clase_07\adicionales\matrices\main.c
 	<stdio.h>
 	<stdlib.h>
 	<conio.h>
 	<string.h>
 	"funciones.h"
 
-1536764203 source:d:\nestor_a\programacion_1_laboratorio_1\clase_07\adicionales\matrices\funciones.c
+1536765550 source:d:\nestor_a\programacion_1_laboratorio_1\clase_07\adicionales\matrices\funciones.c
 	<stdio.h>
 	<stdlib.h>
 	<conio.h>
 	<string.h>
 	"funciones.h"
 
-1536763432 d:\nestor_a\programacion_1_laboratorio_1\clase_07\adicionales\matrices\funciones.h
+1536765519 d:\nestor_a\programacion_1_laboratorio_1\clase_07\adicionales\matrices\funciones.h
 

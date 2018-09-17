@@ -48,3 +48,41 @@ int buscaEspacio(int lista[], int tam)
     return retorno;
 }
 
+
+int mostrarUsuario(char nombre[][31], char apellido[][31], int legajo[], int edad[], int isEmpty[], int legajoAux, int tam)
+{
+    int retorno = -1;
+    printf("Legajo\tApellido  \tNombre  \tEdad\n\n");
+    for(int i=0; i<tam; i++)
+    {
+        if(legajoAux==legajo[i] && isEmpty[i]==0)
+        {
+            printf("\n%d\t%s\t\t%s\t\t%d", legajo[i], apellido[i], nombre[i], edad[i]);
+        }
+        return 0;
+        break;
+    }
+    printf("\n\n");
+    return retorno;
+}
+
+int altaUsuario(char nombre[][31], char apellido[][31], int legajo[], int edad[], int isEmpty[], int tam, int indice)
+{
+    int cantidad;
+    printf("Ingrese nombre: ");
+    fflush(stdin);
+    fgets(nombre[indice], sizeof(nombre[indice]), stdin);
+    cantidad = strlen(nombre[indice]);
+    nombre[indice][cantidad-1] = '\0';
+    printf("Ingrese apellido: ");
+    fflush(stdin);
+    fgets(apellido[indice], sizeof(apellido[indice]), stdin);
+    cantidad = strlen(apellido[indice]);
+    apellido[indice][cantidad-1] = '\0';
+    fflush(stdin);
+    printf("Ingrese legajo: ");
+    scanf("%d", &legajo[indice]);
+    printf("Ingrese edad: ");
+    scanf("%d", &edad[indice]);
+    isEmpty[indice]=0;
+}
