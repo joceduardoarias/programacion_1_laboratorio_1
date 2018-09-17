@@ -15,9 +15,16 @@ void mostrasrEmpleado(eEmpleado employee);
 
 int main()
 {
+    int cantidad;
+
     eEmpleado unEmpleado;
     eEmpleado otroEmpleado;
     eEmpleado empleadoTres = {2222, "Jose", 20000.6, 'm'};// Hardcodeo igual a como fue cargado, sino no funciona
+    eEmpleado empleadoCuatro;
+    eEmpleado empleadoCinco;
+
+
+    empleadoCuatro = empleadoTres; // le doy los valores de empleado tres
 
     unEmpleado.legajo = 1234;
     strcpy(unEmpleado.nombre, "Juan");
@@ -29,10 +36,27 @@ int main()
     otroEmpleado.sexo = 'f';
     otroEmpleado.sueldo = 15000.75;
 
-    printf("Legajo\tNombre\tSexo\tSueldo\n\n");
+    printf("Ingrese Legajo: ");
+    scanf("%d", &empleadoCinco.legajo);
+
+    printf("Ingrese nombre: ");
+    fflush(stdin);
+    fgets(empleadoCinco.nombre, 20, stdin);
+    cantidad = strlen(empleadoCinco.nombre);
+    empleadoCinco.nombre[cantidad-1]='\0';
+
+    printf("Ingrese sexo: ");
+    fflush(stdin);
+    scanf("%c", &empleadoCinco.sexo);
+    printf("Ingrese sueldo: ");
+    scanf("%f", &empleadoCinco.sueldo);
+
+    printf("\n\nLegajo\tNombre\tSexo\tSueldo\n\n");
     mostrasrEmpleado(unEmpleado);
     mostrasrEmpleado(otroEmpleado);
     mostrasrEmpleado(empleadoTres);
+    mostrasrEmpleado(empleadoCuatro);
+    mostrasrEmpleado(empleadoCinco);
     return 0;
 }
 
