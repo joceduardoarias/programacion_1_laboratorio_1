@@ -1,0 +1,25 @@
+# depslib dependency file v1.0
+1537319507 source:d:\dfernandez\clase9\main.c
+	<stdio.h>
+	<stdlib.h>
+	"persona.h"
+
+1537359419 d:\dfernandez\clase9\persona.h
+
+1537319989 source:d:\dfernandez\clase9\persona.c
+	"persona.h"
+
+1537367235 source:d:\nestor_a\programacion_1_laboratorio_1\clase_09\abm\clase9\main.c
+	<stdio.h>
+	<stdlib.h>
+	"persona.h"
+
+1537366595 d:\nestor_a\programacion_1_laboratorio_1\clase_09\abm\clase9\persona.h
+
+1537367221 source:d:\nestor_a\programacion_1_laboratorio_1\clase_09\abm\clase9\persona.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<string.h>
+	"persona.h"
+
