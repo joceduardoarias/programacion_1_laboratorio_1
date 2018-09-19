@@ -136,7 +136,7 @@ void mostrarPersonaDNI(EPersona lista[], int index)
     if(lista[index].isEmpty == 0)
     {
         printf("\nNombre\tApellido\tDNI\tFecha de nacimiento\n\n");
-        printf("%s\t%s\t\t%2d\t%2d / %2d / %d\n", lista[index].nombre, lista[index].apellido, lista[index].dni, lista[index].feNac.dia, lista[index].feNac.mes, lista[index].feNac.anio);
+        printf("%s\t%s\t\t%02d\t%02d / %02d / %d\n", lista[index].nombre, lista[index].apellido, lista[index].dni, lista[index].feNac.dia, lista[index].feNac.mes, lista[index].feNac.anio);
     }
 }
 
@@ -153,51 +153,51 @@ void modificar(EPersona lista[], int len)
     index = buscarPorDni(lista, len, dniAux);
     if(index != -1)
     {
-        do
+        mostrarPersonaDNI(lista, index);
+        printf("\n\n1- Nombre\n2- Apellido\n3- DNI\n4- Fecha de Nacimiento\n5- Salir\n\n");
+        printf("Ingrese opcion a modificar: ");
+        fflush(stdin);
+        scanf("%d", &opcion);
+
+        switch(opcion)
         {
-            mostrarPersonaDNI(lista, index);
-            printf("\n\n1- Nombre\n2- Apellido\n3- DNI\n4- Fecha de Nacimiento\n5- Salir\n\n");
-            printf("Ingrese opcion a modificar: ");
-            scanf("%d", &opcion);
-            switch(opcion)
-            {
-            case 1:
-                printf("\nIngrese nuevo nombre: ");
-                fgets(lista[index].nombre, 31, stdin);
-                cantidad = strlen(lista[index].nombre);
-                lista[index].nombre[cantidad-1] = '\0';
-                break;
-            case 2:
-                printf("\nIngrese nuevo apellido: ");
-                fgets(lista[index].apellido, 31, stdin);
-                cantidad = strlen(lista[index].apellido);
-                lista[index].apellido[cantidad-1] = '\0';
-                break;
-            case 3:
-                printf("Ingrese nuevo DNI: ");
-                scanf("%ld", &lista[index].dni);
-                break;
-            case 4:
-                printf("Ingrese nuevo dia de nacimiento: ");
-                scanf("%d", &lista[index].feNac.dia);
-                printf("Ingrese nuevo mes de nacimiento: ");
-                scanf("%d", &lista[index].feNac.mes);
-                printf("Ingrese nuevo anio de nacimiento: ");
-                scanf("%d", &lista[index].feNac.anio);
-                break;
-            default:
-                printf("Opcion incorrecta, reintente.\n\n");
-                break;
-            }
+        case 1:
+            printf("\nIngrese nuevo nombre: ");
+            fflush(stdin);
+            fgets(lista[index].nombre, 31, stdin);
+            cantidad = strlen(lista[index].nombre);
+            lista[index].nombre[cantidad-1] = '\0';
+            break;
+        case 2:
+            printf("\nIngrese nuevo apellido: ");
+            fflush(stdin);
+            fgets(lista[index].apellido, 31, stdin);
+            cantidad = strlen(lista[index].apellido);
+            lista[index].apellido[cantidad-1] = '\0';
+            break;
+        case 3:
+            printf("\nIngrese nuevo DNI: ");
+            scanf("%ld", &lista[index].dni);
+            break;
+        case 4:
+            printf("\nIngrese nuevo dia de nacimiento: ");
+            scanf("%d", &lista[index].feNac.dia);
+            printf("\nIngrese nuevo mes de nacimiento: ");
+            scanf("%d", &lista[index].feNac.mes);
+            printf("\nIngrese nuevo anio de nacimiento: ");
+            scanf("%d", &lista[index].feNac.anio);
+            break;
+        case 5:
+            break;
+        default:
+            printf("Opcion incorrecta, reintente.\n\n");
+            system("pause");
         }
-        while(opcion != 5);
     }
     else
     {
         printf("No se encontro DNI en sistema\n\n");
     }
-
-
 }
 
 

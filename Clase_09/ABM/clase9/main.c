@@ -34,8 +34,10 @@ int main()
                 break;
             case 4:
                 system("cls");
-                printf("MOSTRAR USUARIOS\n");
+                printf("MOSTRAR USUARIOS\n\n");
+                printf("Lista desordenada.\n");
                 mostrarUsuarios(personas, CANT);
+                printf("Lista ordenada.\n");
                 listaOrdenada(personas, CANT);
                 mostrarUsuarios(personas, CANT);
                 system("pause");
