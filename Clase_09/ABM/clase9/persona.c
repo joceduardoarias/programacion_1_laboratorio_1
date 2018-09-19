@@ -148,6 +148,14 @@ void modificar(EPersona lista[], int len)
     int index;
     int cantidad;
 
+    char confirmar;
+    char auxNombre[31];
+    char auxApellido[31];
+    long int auxDNI;
+    int diaAux;
+    int mesAux;
+    int anioAux;
+
     printf("Ingrese DNI de la persona: ");
     scanf("%d", &dniAux);
     index = buscarPorDni(lista, len, dniAux);
@@ -164,28 +172,72 @@ void modificar(EPersona lista[], int len)
         case 1:
             printf("\nIngrese nuevo nombre: ");
             fflush(stdin);
-            fgets(lista[index].nombre, 31, stdin);
+            fgets(auxNombre, 31, stdin);
+            cantidad = strlen(auxNombre);
+            auxNombre[cantidad-1] = '\0';
+            printf("\nDesea modificar %s por %s ?: ", auxNombre, lista[index].nombre);
+            fflush(stdin);
+            scanf("%c", &confirmar);
+            if(confirmar == 's'){
+                strcpy(lista[index].nombre, auxNombre);
+            }
+            else{
+                printf("\nNo se realizo la modificacion.\n");
+            }
+            /*fgets(lista[index].nombre, 31, stdin);
             cantidad = strlen(lista[index].nombre);
-            lista[index].nombre[cantidad-1] = '\0';
+            lista[index].nombre[cantidad-1] = '\0';*/
             break;
         case 2:
             printf("\nIngrese nuevo apellido: ");
             fflush(stdin);
-            fgets(lista[index].apellido, 31, stdin);
+            fgets(auxApellido, 31, stdin);
+            cantidad = strlen(auxApellido);
+            auxApellido[cantidad-1] = '\0';
+            printf("Desea modificar %s por %s ?: ", auxApellido, lista[index].apellido);
+            fflush(stdin);
+            scanf("%c", &confirmar);
+            if(confirmar == 's'){
+                strcpy(lista[index].apellido, auxApellido);
+            }
+            else{
+                printf("\nNo se realizo la modificacion.\n");
+            }
+            /*fgets(lista[index].apellido, 31, stdin);
             cantidad = strlen(lista[index].apellido);
-            lista[index].apellido[cantidad-1] = '\0';
+            lista[index].apellido[cantidad-1] = '\0';*/
             break;
         case 3:
             printf("\nIngrese nuevo DNI: ");
-            scanf("%ld", &lista[index].dni);
+            scanf("%ld", &auxDNI);
+            printf("Desea modificar %d por %d ?", auxDNI, lista[index].dni);
+            fflush(stdin);
+            scanf("%c", &confirmar);
+            if(confirmar == 's'){
+                lista[index].dni = auxDNI;
+            }
+            else{
+                printf("\nNo se realizo la modificacion.\n");
+            }
             break;
         case 4:
             printf("\nIngrese nuevo dia de nacimiento: ");
-            scanf("%d", &lista[index].feNac.dia);
+            scanf("%d", &diaAux);
             printf("\nIngrese nuevo mes de nacimiento: ");
-            scanf("%d", &lista[index].feNac.mes);
+            scanf("%d", &mesAux);
             printf("\nIngrese nuevo anio de nacimiento: ");
-            scanf("%d", &lista[index].feNac.anio);
+            scanf("%d", &anioAux);
+            printf("\nDesea modificar %02d / %02d / %d por %02d / %02d / %d ?: ", lista[index].feNac.dia, lista[index].feNac.mes, lista[index].feNac.anio, diaAux, mesAux, anioAux);
+            fflush(stdin);
+            scanf("%c", &confirmar);
+            if(confirmar == 's'){
+                lista[index].feNac.dia = diaAux;
+                lista[index].feNac.mes = mesAux;
+                lista[index].feNac.anio = anioAux;
+            }
+            else{
+                printf("\nNo se realizo la modificacion.\n");
+            }
             break;
         case 5:
             break;
