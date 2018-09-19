@@ -1,15 +1,17 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <conio.h>
+#include <string.h>
 #include "persona.h"
 
-#define CANT 4
+#define CANT 5
 
 int main()
 {
     char seguir='s';
-    EPersona personas[]={{"Lopez", "Juan", 10, 0, {02, 05, 1992}}; {"Alegria", "Nestor", 20, 0,{01, 05, 1963}}; {"Zol", "Ana", 30, 0 ,{06, 8, 1963};  {"Alegria", "Carlos", 40, 0, {06, 9, 1963}}};
+    EPersona personas[]={{"Lopez", "Juan", 10, 0, {2, 5, 1992}}, {"Alegria", "Nestor", 20, 0,{1, 5, 1963}}, {"Zol", "Ana", 30, 0 ,{6, 8, 1963}},  {"Alegria", "Carlos", 40, 0, {6, 9, 1963}}, {"Lopez", "Ana", 50, 0, {2, 5, 1982}}  };
 
-    init(personas, CANT);
+    //init(personas, CANT);
 
     do{
 
@@ -34,7 +36,6 @@ int main()
                 system("cls");
                 printf("MOSTRAR USUARIOS\n");
                 mostrarUsuarios(personas, CANT);
-                printf("\n\n");
                 listaOrdenada(personas, CANT);
                 mostrarUsuarios(personas, CANT);
                 system("pause");
@@ -43,7 +44,7 @@ int main()
                 seguir = 'n';
                 break;
             default:
-                printf("Error al ingresar opcion, reintente.\n\n");
+                printf("Error al ingresar opcion, reintente.");
                 system("pause");
         }
     }while(seguir=='s');

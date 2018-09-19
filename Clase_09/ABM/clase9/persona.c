@@ -136,7 +136,7 @@ void mostrarPersonaDNI(EPersona lista[], int index)
     if(lista[index].isEmpty == 0)
     {
         printf("\nNombre\tApellido\tDNI\tFecha de nacimiento\n\n");
-        printf("%s\t%s\t\t%d\t%d / %d / %d\n", lista[index].nombre, lista[index].apellido, lista[index].dni, lista[index].feNac.dia, lista[index].feNac.mes, lista[index].feNac.anio);
+        printf("%s\t%s\t\t%2d\t%2d / %2d / %d\n", lista[index].nombre, lista[index].apellido, lista[index].dni, lista[index].feNac.dia, lista[index].feNac.mes, lista[index].feNac.anio);
     }
 }
 
@@ -189,7 +189,8 @@ void modificar(EPersona lista[], int len)
                 printf("Opcion incorrecta, reintente.\n\n");
                 break;
             }
-        }while(opcion != 5);
+        }
+        while(opcion != 5);
     }
     else
     {
@@ -207,29 +208,33 @@ void mostrarUsuarios(EPersona lista[], int len)
     {
         if(lista[i].isEmpty == 0)
         {
-            printf("%s\t%s\t\t%d\t%d / %d / %d\n", lista[i].nombre, lista[i].apellido, lista[i].dni, lista[i].feNac.dia, lista[i].feNac.mes, lista[i].feNac.anio);
+            printf("%s\t%s\t\t%02d\t%02d / %02d / %d\n", lista[i].nombre, lista[i].apellido, lista[i].dni, lista[i].feNac.dia, lista[i].feNac.mes, lista[i].feNac.anio);
         }
     }
-    printf("\n\n");
+    printf("\n");
 }
 
-void listaOrdenada(EPersona lista[], int len){
+void listaOrdenada(EPersona lista[], int len)
+{
     EPersona auxPersona;
-    for(int i=0; i<len-1; i++){
-        for(int j=i+1; j<len; j++){
-            if(strcmp(lista[i].apellido,lista[j].apellido)>0){
+    for(int i=0; i<len-1; i++)
+    {
+        for(int j=i+1; j<len; j++)
+        {
+            if(strcmp(lista[i].apellido,lista[j].apellido)>0)
+            {
                 auxPersona = lista[i];
                 lista[i] = lista[j];
                 lista[j] = auxPersona;
             }
-            else{
-                if((strcmp(lista[i].apellido,lista[j].apellido)>0) && (strcmp(lista[i].nombre,lista[j].nombre)>0)){
-                    auxPersona = lista[i];
-                    lista[i] = lista[j];
-                    lista[j] = auxPersona;
-                }
+            if((strcmp(lista[i].apellido,lista[j].apellido)==0) && (strcmp(lista[i].nombre,lista[j].nombre) > 0))
+            {
+                auxPersona = lista[i];
+                lista[i] = lista[j];
+                lista[j] = auxPersona;
             }
-
         }
+
     }
+
 }
