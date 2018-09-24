@@ -1,0 +1,17 @@
+# depslib dependency file v1.0
+1534207476 source:c:\users\elkinjose\documents\laboratorios\laboratorio_programacionc\practica\practica_abm_gestion\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Funciones.h"
+
+1534206743 c:\users\elkinjose\documents\laboratorios\laboratorio_programacionc\practica\practica_abm_gestion\funciones.h
+	<stdio.h>
+	<stdlib.h>
+
+1534210379 source:c:\users\elkinjose\documents\laboratorios\laboratorio_programacionc\practica\practica_abm_gestion\funciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Funciones.h"
+

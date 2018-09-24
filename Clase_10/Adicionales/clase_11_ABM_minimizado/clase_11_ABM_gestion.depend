@@ -1,0 +1,32 @@
+# depslib dependency file v1.0
+1533754853 source:c:\users\elkinjose\documents\laboratorios\lenguaje_c\laboratorio_2018_ii\clase_11_abm_gestion\utn_gestion.c
+	<stdio.h>
+	<stdlib.h>
+	"utn_gestion.h"
+
+1533754430 c:\users\elkinjose\documents\laboratorios\lenguaje_c\laboratorio_2018_ii\clase_11_abm_gestion\utn_gestion.h
+	<stdio.h>
+	<stdlib.h>
+
+1533753442 source:c:\users\elkinjose\documents\laboratorios\lenguaje_c\laboratorio_2018_ii\clase_11_abm_gestion\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utn_gestion.h"
+
+1533957016 source:c:\users\elkinjose\documents\laboratorios\lenguaje_c\laboratorio_2018_ii\clase_11_abm_minimizado\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utn_gestion.h"
+
+1533954624 c:\users\elkinjose\documents\laboratorios\lenguaje_c\laboratorio_2018_ii\clase_11_abm_minimizado\utn_gestion.h
+	<stdio.h>
+	<stdlib.h>
+
+1533956719 source:c:\users\elkinjose\documents\laboratorios\lenguaje_c\laboratorio_2018_ii\clase_11_abm_minimizado\utn_gestion.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utn_gestion.h"
+
