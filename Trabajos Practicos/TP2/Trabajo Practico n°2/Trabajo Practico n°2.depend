@@ -29,3 +29,27 @@
 	<stdlib.h>
 	<alegria.h>
 
+1537915073 source:c:\users\néstor\desktop\programacion_1_laboratorio_1\trabajos practicos\tp2\trabajo practico n°2\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<string.h>
+
+1537916214 source:c:\users\néstor\desktop\programacion_1_laboratorio_1\trabajos practicos\tp2\trabajo practico n°2\alegria.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	"alegria.h"
+	"utn.h"
+
+1537909989 c:\users\néstor\desktop\programacion_1_laboratorio_1\trabajos practicos\tp2\trabajo practico n°2\alegria.h
+
+1537914178 c:\users\néstor\desktop\programacion_1_laboratorio_1\trabajos practicos\tp2\trabajo practico n°2\utn.h
+
+1537914880 source:c:\users\néstor\desktop\programacion_1_laboratorio_1\trabajos practicos\tp2\trabajo practico n°2\main.c
+	<stdio.h>
+	<stdlib.h>
+	"alegria.h"
+	"utn.h"
+
