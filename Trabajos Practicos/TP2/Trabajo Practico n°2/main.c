@@ -9,7 +9,8 @@ int main()
     Employee empleados[TAM];
 
     char seguir = 's';
-    //int index;
+    int idBusqueda;
+    char idBusquedaChar[51];
     //int posicionLibre;
 
 
@@ -70,6 +71,12 @@ int main()
         case '3':
             system("cls");
             printf("<-- BAJA EMPLEADO -->\n\n");
+            if(!getStringNumeros("Ingrese ID del empleado: ", idBusquedaChar)){
+                printf("\nIngrese solo numeros.\n");
+                break;
+            }
+            idBusqueda = atoi(idBusquedaChar);
+            removeEmployee(empleados, TAM, idBusqueda);
             system("pause");
             break;
         case '4':

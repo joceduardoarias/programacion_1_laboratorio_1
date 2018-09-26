@@ -81,7 +81,7 @@ int findEmployeeById(Employee* arrayEmpleados, int tamanioArray, int id)
     return index;
 }
 
-void printEmployeesById(Employee* arrayEmpleados, int index)
+void printEmployeeById(Employee* arrayEmpleados, int index)
 {
     printf("\t  ID |  Nombre  |  Apellido  |  Salario  | Sector  \n");
     printf("\t%5d|%10s|%12s|%11.2f|%9d\n", arrayEmpleados[index].id, arrayEmpleados[index].name, arrayEmpleados[index].lastName, arrayEmpleados[index].salary, arrayEmpleados[index].sector);
@@ -112,7 +112,7 @@ void modifyEmployee(Employee* arrayyEmpleados, int tamanioArray)
         do
         {
             printf("\nDatos del empleado.\n\n");
-            printEmployeesById(arrayyEmpleados, index);
+            printEmployeeById(arrayyEmpleados, index);
             printf("\nMenu de opciones.\n\n1- Nombre\n2- Apellido\n3- Salario\n4- Sector\n5- Salir\n\n");
             opcion = getInt("Ingrese la opcion que desea modificar: ");
             switch(opcion)
@@ -234,3 +234,35 @@ void modifyEmployee(Employee* arrayyEmpleados, int tamanioArray)
     }
 }
 
+/** \brief Remove a Employee by Id (put isEmpty Flag in 1)
+*
+* \param list Employee*
+* \param len int
+* \param id int
+* \return int Return (-1) if Error [Invalid length or NULL pointer or if can't
+find a employee] - (0) if Ok
+*
+*/
+void removeEmployee(Employee* arrayEmpleados, int tamanioarray, int id){
+    int index;
+    char confirma;
+
+
+    index = findEmployeeById(arrayEmpleados, tamanioarray, id);
+    if(index == -1){
+        printf("\nNo se encuentra empleado con ese ID\n\n");
+    }
+    else{
+        printf("\nDatos del empleado.\n\n");
+        printEmployeeById(arrayEmpleados, index);
+        confirma = getChar("\nDesea eliminar al empleado (s/n)?: ");
+        if(confirma == 's'){
+            arrayEmpleados[index].isEmpty = VACIO;
+            printf("\nSe elimino al empleado correctamente.\n\n");
+        }
+        else{
+            printf("\nSe cancelo la baja del empleado.\n\n");
+        }
+    }
+
+}

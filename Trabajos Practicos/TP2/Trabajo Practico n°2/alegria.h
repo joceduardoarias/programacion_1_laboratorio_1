@@ -16,7 +16,9 @@ int findFreePlace(Employee* arrayEmpleados, int tamanioArray, int valor);
 int addEmployee(Employee* arrayEmpleados, int tamanioArray, int auxId, char auxName[],char
 auxLastName[],float auxSalary,int auxSector);
 int findEmployeeById(Employee* arrayEmpleados, int tamanioArray, int id);
-void printEmployeesById(Employee* arrayEmpleados, int index);
+void printEmployeeById(Employee* arrayEmpleados, int index);
 void modifyEmployee(Employee* arrayyEmpleados, int tamanioArray);
+void removeEmployee(Employee* arrayEmpleados, int tamanioarray, int id);
+
 
 #endif // ALEGRIA_H_INCLUDED
