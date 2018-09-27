@@ -230,7 +230,8 @@ void modifyEmployee(Employee* arrayyEmpleados, int tamanioArray)
             default:
                 printf("\nOpcion incorrecta, reintente.\n\n");
             }
-        }while(opcion !=5);
+        }
+        while(opcion !=5);
     }
 }
 
@@ -243,26 +244,96 @@ void modifyEmployee(Employee* arrayyEmpleados, int tamanioArray)
 find a employee] - (0) if Ok
 *
 */
-void removeEmployee(Employee* arrayEmpleados, int tamanioarray, int id){
+void removeEmployee(Employee* arrayEmpleados, int tamanioarray, int id)
+{
     int index;
     char confirma;
 
 
     index = findEmployeeById(arrayEmpleados, tamanioarray, id);
-    if(index == -1){
+    if(index == -1)
+    {
         printf("\nNo se encuentra empleado con ese ID\n\n");
     }
-    else{
+    else
+    {
         printf("\nDatos del empleado.\n\n");
         printEmployeeById(arrayEmpleados, index);
         confirma = getChar("\nDesea eliminar al empleado (s/n)?: ");
-        if(confirma == 's'){
+        if(confirma == 's')
+        {
             arrayEmpleados[index].isEmpty = VACIO;
             printf("\nSe elimino al empleado correctamente.\n\n");
         }
-        else{
+        else
+        {
             printf("\nSe cancelo la baja del empleado.\n\n");
         }
     }
+}
 
+/** \brief Sort the elements in the array of employees, the argument order
+indicate UP or DOWN order
+*
+* \param list Employee*
+* \param len int
+* \param order int [1] indicate UP - [0] indicate DOWN
+* \return int Return (-1) if Error [Invalid length or NULL pointer] - (0) if Ok
+*
+*/
+void sortEmployees(Employee* arrayEmpleados, int tamanioArray, int order)
+{
+    Employee auxPersona;
+    for(int i=0; i<tamanioArray-1; i++)
+    {
+        for(int j=i+1; j<tamanioArray; j++)
+        {
+            if(order == 0)
+            {
+                if(strcmp(arrayEmpleados[i].lastName,arrayEmpleados[j].lastName)>0)
+                {
+                    auxPersona = arrayEmpleados[i];
+                    arrayEmpleados[i] = arrayEmpleados[j];
+                    arrayEmpleados[j] = auxPersona;
+                }
+                if((strcmp(arrayEmpleados[i].lastName,arrayEmpleados[j].lastName)==0) && arrayEmpleados[i].sector > arrayEmpleados[j].sector)
+                {
+                    auxPersona = arrayEmpleados[i];
+                    arrayEmpleados[i] = arrayEmpleados[j];
+                    arrayEmpleados[j] = auxPersona;
+                }
+            }
+            else{
+                if(strcmp(arrayEmpleados[i].lastName,arrayEmpleados[j].lastName)<0)
+                {
+                    auxPersona = arrayEmpleados[i];
+                    arrayEmpleados[i] = arrayEmpleados[j];
+                    arrayEmpleados[j] = auxPersona;
+                }
+                if((strcmp(arrayEmpleados[i].lastName,arrayEmpleados[j].lastName)==0) && arrayEmpleados[i].sector < arrayEmpleados[j].sector)
+                {
+                    auxPersona = arrayEmpleados[i];
+                    arrayEmpleados[i] = arrayEmpleados[j];
+                    arrayEmpleados[j] = auxPersona;
+                }
+            }
+        }
+    }
+}
+
+/** \brief print the content of employees array
+*
+* \param list Employee*
+* \param length int
+* \return int
+*
+*/
+void printEmployees(Employee* arrayEmpleados, int tamanioArray){
+    printf("\n\t   ID  |   Nombre   |   Apellido   |   Salario   |  Sector  \n");
+    for(int i=0; i<tamanioArray; i++){
+            if(arrayEmpleados[i].isEmpty == OCUPADO){
+                 printf("\t%7d|%12s|%14s|%13.2f|%10d\n", arrayEmpleados[i].id, arrayEmpleados[i].name, arrayEmpleados[i].lastName, arrayEmpleados[i].salary, arrayEmpleados[i].sector);
+            }
+    }
+    printf("\n\n");
 }

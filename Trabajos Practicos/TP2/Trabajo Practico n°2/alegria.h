@@ -19,6 +19,8 @@ int findEmployeeById(Employee* arrayEmpleados, int tamanioArray, int id);
 void printEmployeeById(Employee* arrayEmpleados, int index);
 void modifyEmployee(Employee* arrayyEmpleados, int tamanioArray);
 void removeEmployee(Employee* arrayEmpleados, int tamanioarray, int id);
+void sortEmployees(Employee* arrayEmpleados, int tamanioArray, int order);
+void printEmployees(Employee* arrayEmpleados, int tamanioArray);
 
 
 #endif // ALEGRIA_H_INCLUDED
