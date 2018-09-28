@@ -10,6 +10,8 @@ typedef struct{
     int isEmpty;
 }Employee;
 
+
+void hardcodeo(Employee* arrayEmpleados);
 int menu();
 void initEmployees(Employee* arrayEmpleados, int tamanioArray);
 int findFreePlace(Employee* arrayEmpleados, int tamanioArray, int valor);
@@ -19,8 +21,9 @@ int findEmployeeById(Employee* arrayEmpleados, int tamanioArray, int id);
 void printEmployeeById(Employee* arrayEmpleados, int index);
 void modifyEmployee(Employee* arrayyEmpleados, int tamanioArray);
 void removeEmployee(Employee* arrayEmpleados, int tamanioarray, int id);
-void sortEmployees(Employee* arrayEmpleados, int tamanioArray, int order);
+void sortEmployees(Employee* arrayEmpleados, int tamanioArray);
 void printEmployees(Employee* arrayEmpleados, int tamanioArray);
-
+void enlistEmployee(Employee* arrayEmpleados, int tamanioArray);
+void listaCalculosEmpleados(Employee* arrayEmpleados, int tamanioArray);
 
 #endif // ALEGRIA_H_INCLUDED

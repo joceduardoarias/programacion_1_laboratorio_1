@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include "alegria.h"
 #include "utn.h"
-#define TAM 3
+#define TAM 5
 
 int main()
 {
@@ -11,8 +11,6 @@ int main()
     char seguir = 's';
     int idBusqueda;
     char idBusquedaChar[51];
-    int opcionOrden;
-    char opcionOrdenChar[51];
     //int posicionLibre;
 
 
@@ -29,6 +27,8 @@ int main()
 
     //Inicializo todos los estados en TRUE (1)
     initEmployees(empleados, TAM);
+
+    hardcodeo(empleados);
 
     do
     {
@@ -83,14 +83,8 @@ int main()
             break;
         case '4':
             system("cls");
-            printf("<-- LISTAR EMPLEADOS -->\n\n");
-            if(!getStringNumeros("Indique 0 para ordenar en forma descendente o 1 para ascendente: ", opcionOrdenChar)){
-                printf("\nIngrese solo numeros\n");
-                break;
-            }
-            opcionOrden = atoi(opcionOrdenChar);
-            sortEmployees(empleados, TAM, opcionOrden);
-            printEmployees(empleados, TAM);
+            printf("<-- LISTAS DE EMPLEADOS -->\n\n");
+            enlistEmployee(empleados, TAM);
             system("pause");
             break;
         case '5':

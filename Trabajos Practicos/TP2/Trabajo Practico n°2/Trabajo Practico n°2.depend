@@ -35,7 +35,7 @@
 	<conio.h>
 	<string.h>
 
-1538008385 source:c:\users\néstor\desktop\programacion_1_laboratorio_1\trabajos practicos\tp2\trabajo practico n°2\alegria.c
+1538097555 source:c:\users\néstor\desktop\programacion_1_laboratorio_1\trabajos practicos\tp2\trabajo practico n°2\alegria.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -43,11 +43,11 @@
 	"alegria.h"
 	"utn.h"
 
-1538007113 c:\users\néstor\desktop\programacion_1_laboratorio_1\trabajos practicos\tp2\trabajo practico n°2\alegria.h
+1538096448 c:\users\néstor\desktop\programacion_1_laboratorio_1\trabajos practicos\tp2\trabajo practico n°2\alegria.h
 
 1537914178 c:\users\néstor\desktop\programacion_1_laboratorio_1\trabajos practicos\tp2\trabajo practico n°2\utn.h
 
-1538008259 source:c:\users\néstor\desktop\programacion_1_laboratorio_1\trabajos practicos\tp2\trabajo practico n°2\main.c
+1538080427 source:c:\users\néstor\desktop\programacion_1_laboratorio_1\trabajos practicos\tp2\trabajo practico n°2\main.c
 	<stdio.h>
 	<stdlib.h>
 	"alegria.h"
