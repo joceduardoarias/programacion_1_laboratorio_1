@@ -23,7 +23,7 @@ void modifyEmployee(Employee* arrayyEmpleados, int tamanioArray);
 void removeEmployee(Employee* arrayEmpleados, int tamanioarray, int id);
 void sortEmployees(Employee* arrayEmpleados, int tamanioArray);
 void printEmployees(Employee* arrayEmpleados, int tamanioArray);
-void enlistEmployee(Employee* arrayEmpleados, int tamanioArray);
+void enlistEmployee(Employee arrayEmpleados[], int tamanioArray);
 void listaCalculosEmpleados(Employee* arrayEmpleados, int tamanioArray);
 
 #endif // ALEGRIA_H_INCLUDED

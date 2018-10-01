@@ -53,3 +53,27 @@
 	"alegria.h"
 	"utn.h"
 
+1538394444 source:d:\cosas\nestor_a\programacion_1_laboratorio_1\trabajos practicos\tp2\trabajo practico n°2\main.c
+	<stdio.h>
+	<stdlib.h>
+	"alegria.h"
+	"utn.h"
+
+1538394860 d:\cosas\nestor_a\programacion_1_laboratorio_1\trabajos practicos\tp2\trabajo practico n°2\alegria.h
+
+1538394444 d:\cosas\nestor_a\programacion_1_laboratorio_1\trabajos practicos\tp2\trabajo practico n°2\utn.h
+
+1538394444 source:d:\cosas\nestor_a\programacion_1_laboratorio_1\trabajos practicos\tp2\trabajo practico n°2\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<string.h>
+
+1538394860 source:d:\cosas\nestor_a\programacion_1_laboratorio_1\trabajos practicos\tp2\trabajo practico n°2\alegria.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	"alegria.h"
+	"utn.h"
+

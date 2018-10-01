@@ -284,18 +284,18 @@ void sortEmployees(Employee* arrayEmpleados, int tamanioArray)
     {
         for(int j=i+1; j<tamanioArray; j++)
         {
-            if(strcmp(arrayEmpleados[i].lastName,arrayEmpleados[j].lastName) > 0)
+            if(strcmp(arrayEmpleados[i].sector,arrayEmpleados[j].sector) > 0)
             {
                 auxPersona = arrayEmpleados[i];
                 arrayEmpleados[i] = arrayEmpleados[j];
                 arrayEmpleados[j] = auxPersona;
             }
-            if((strcmp(arrayEmpleados[i].lastName,arrayEmpleados[j].lastName) == 0) && arrayEmpleados[i].sector > arrayEmpleados[j].sector)
+            /*if((strcmp(arrayEmpleados[i].sector,arrayEmpleados[j].sector) == 0) && arrayEmpleados[i].lastName > arrayEmpleados[j].lastName)
             {
                 auxPersona = arrayEmpleados[i];
                 arrayEmpleados[i] = arrayEmpleados[j];
                 arrayEmpleados[j] = auxPersona;
-            }
+            }*/
         }
     }
 }
@@ -321,16 +321,16 @@ void printEmployees(Employee* arrayEmpleados, int tamanioArray)
     printf("\n\n");
 }
 
-void enlistEmployee(Employee* arrayEmpleados, int tamanioArray)
+void enlistEmployee(Employee arrayEmpleados[], int tamanioArray)
 {
     int opcion;
-    printf("1- Listado de los empleados ordenados alfabéticamente por Apellido y Sector.\n2- Total y promedio de los salarios, y cuantos empleados superan el salario promedio.\n\n");
+    printf("1- Listado de los empleados ordenados alfabeticamente por Apellido y Sector.\n2- Total y promedio de los salarios, y cuantos empleados superan el salario promedio.\n\n");
     opcion = getInt("Ingrese opcion: ");
-    while(opcion!= 1 && opcion != 2)
+    /*while(opcion!= 1 && opcion != 2)
     {
         printf("\nOpcion Incorrecta, reintente.\n");
         opcion = getInt("Ingrese opcion: ");
-    }
+    }*/
     switch(opcion)
     {
     case 1:
