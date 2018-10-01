@@ -284,18 +284,20 @@ void sortEmployees(Employee* arrayEmpleados, int tamanioArray)
     {
         for(int j=i+1; j<tamanioArray; j++)
         {
-            if(strcmp(arrayEmpleados[i].sector,arrayEmpleados[j].sector) > 0)
+            if(arrayEmpleados[i].sector > arrayEmpleados[j].sector)
             {
                 auxPersona = arrayEmpleados[i];
                 arrayEmpleados[i] = arrayEmpleados[j];
                 arrayEmpleados[j] = auxPersona;
             }
-            /*if((strcmp(arrayEmpleados[i].sector,arrayEmpleados[j].sector) == 0) && arrayEmpleados[i].lastName > arrayEmpleados[j].lastName)
+
+            if(arrayEmpleados[i].sector == arrayEmpleados[j].sector && (strcmp(arrayEmpleados[i].lastName, arrayEmpleados[j].lastName) > 0 ))
             {
+
                 auxPersona = arrayEmpleados[i];
                 arrayEmpleados[i] = arrayEmpleados[j];
                 arrayEmpleados[j] = auxPersona;
-            }*/
+            }
         }
     }
 }
