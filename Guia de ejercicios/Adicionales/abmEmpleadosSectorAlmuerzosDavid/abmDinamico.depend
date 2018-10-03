@@ -1,0 +1,71 @@
+# depslib dependency file v1.0
+1537394808 source:c:\test\repaso 2018 clase1\abmdinamico\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1537803284 source:c:\users\alumno\desktop\abmdinamico\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+
+1538405644 source:c:\users\alumno\desktop\abmempleadossector\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+
+1538407677 source:c:\users\alumno\desktop\abmempleadossectoralmuerzos\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+
+1538569629 source:d:\cosas\nestor_a\programacion_1_laboratorio_1\guia de ejercicios\adicionales\abmempleadossectoralmuerzosdavid\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	"empleado.h"
+	"sector.h"
+	"almuerzo.h"
+	"comida.h"
+
+1538569370 source:d:\cosas\nestor_a\programacion_1_laboratorio_1\guia de ejercicios\adicionales\abmempleadossectoralmuerzosdavid\empleado.c
+	<stdio.h>
+	<stdlib.h>
+	"empleado.h"
+	"sector.h"
+	"almuerzo.h"
+
+1538569662 d:\cosas\nestor_a\programacion_1_laboratorio_1\guia de ejercicios\adicionales\abmempleadossectoralmuerzosdavid\empleado.h
+
+1538569379 source:d:\cosas\nestor_a\programacion_1_laboratorio_1\guia de ejercicios\adicionales\abmempleadossectoralmuerzosdavid\sector.c
+	<stdio.h>
+	<stdlib.h>
+	"empleado.h"
+	"sector.h"
+	"almuerzo.h"
+
+1538569379 d:\cosas\nestor_a\programacion_1_laboratorio_1\guia de ejercicios\adicionales\abmempleadossectoralmuerzosdavid\sector.h
+
+1538569262 source:d:\cosas\nestor_a\programacion_1_laboratorio_1\guia de ejercicios\adicionales\abmempleadossectoralmuerzosdavid\almuerzo.c
+	<stdio.h>
+	<stdlib.h>
+	"empleado.h"
+	"sector.h"
+	"almuerzo.h"
+
+1538569676 d:\cosas\nestor_a\programacion_1_laboratorio_1\guia de ejercicios\adicionales\abmempleadossectoralmuerzosdavid\almuerzo.h
+
+1538569416 source:d:\cosas\nestor_a\programacion_1_laboratorio_1\guia de ejercicios\adicionales\abmempleadossectoralmuerzosdavid\comida.c
+	<stdio.h>
+	<stdlib.h>
+	"empleado.h"
+	"sector.h"
+	"almuerzo.h"
+	"comida.h"
+
+1538569416 d:\cosas\nestor_a\programacion_1_laboratorio_1\guia de ejercicios\adicionales\abmempleadossectoralmuerzosdavid\comida.h
+
