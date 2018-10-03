@@ -31,9 +31,33 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="almuerzo.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="almuerzo.h" />
+		<Unit filename="comida.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="comida.h" />
+		<Unit filename="empleado.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="empleado.h" />
+		<Unit filename="fecha.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="fecha.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="sector.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="sector.h" />
+		<Unit filename="utn.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="utn.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />
