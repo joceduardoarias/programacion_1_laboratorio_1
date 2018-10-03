@@ -3,6 +3,7 @@
 #include "empleado.h"
 #include "sector.h"
 #include "almuerzo.h"
+#include "utn.h"
 
 
 

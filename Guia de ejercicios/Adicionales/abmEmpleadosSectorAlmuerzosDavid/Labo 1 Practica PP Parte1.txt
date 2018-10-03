@@ -1,7 +1,7 @@
 Desarrollar en ANSI C:
 Una empresa necesita administrar los almuerzos de su comedor en planta, y para ello se deberá realizar un programa de acuerdo a lo siguiente:
 
-	Menu:
+	Comida:
 •	Código de menu (autoincremental)
 •	Descripción (máximo 51 caracteres)  Validar
 •	Importe (debe ser mayor a cero)  Validar

@@ -4,34 +4,18 @@
 #include <conio.h>
 #include "empleado.h"
 #include "sector.h"
-#include "almuerzo.h"
 #include "comida.h"
-
-void inicializarEmpleados( eEmpleado x[], int tam);
-int buscarLibre( eEmpleado x[], int tam);
-int buscarEmpleado(eEmpleado x[], int tam, int legajo);
-void mostrarEmpleado(eEmpleado emp, eSector sectores[], int tamSector);
-void mostrarEmpleados(eEmpleado nomina[], int tam, eSector sectores[], int tamSector);
-void agregarEmpleado(eEmpleado empleados[], int tam, eSector sectores[], int tamSector);
-void eliminarEmpleado(eEmpleado *empleados, int tam, eSector sectores[], int tamSector);
-void modificarEmpleado(eEmpleado empleados[], int tam, eSector sectores[], int tamSector);;
-int elegirSector(eSector sectores[], int tam);
-void cargarDescripcion(eSector sectores[], int tamSector, int idSector, char cadena[]);
-void listarEmpleadosXSector(eEmpleado x[],int tam, eSector sectores[], int tamSector);
-void ordenarXSectorYNombre(eEmpleado x[],int tam, eSector sectores[], int tamSector);
-void mostrarEmpleadosMasGanadores(eEmpleado x[],int tam, eSector sectores[], int tamSector);
-void harcodearEmpleados(eEmpleado x[]);
-void cargarDescripcionComida(eComida comidas[], int tamComida, int idComida, char cadena[]);
-void mostrarAlmuerzos(eAlmuerzo almuerzos[], int tamAlmuerzo, eEmpleado empleados[], int tamEmpleados, eComida comidas[], int tamComidas);
-void cargarNombreEmpleado(eEmpleado empleados[], int tam, int legajo, char cadena[]);
-void mostrarAlmuerzosEmpleado(eAlmuerzo almuerzos[], int tamAlmuerzo, eEmpleado empleados[], int tamEmpleados, eComida comidas[], int tamComidas, eSector sectores[], int tamSector);
-int menu();
+#include "almuerzo.h"
+#include "utn.h"
+#define LEN_EMPLEADOS 100
+#define LEN_COMIDAS 20
 
 int main()
 {
 
     char seguir = 's';
-    eEmpleado lista[10];
+    eEmpleado empleados[LEN_EMPLEADOS];
+
     eSector sectores[] =
     {
         {1, "RRHH"},
@@ -41,7 +25,7 @@ int main()
         {5, "Sistemas"}
     };
 
-    eComida comidas[] =
+    eComida comidas[LEN_COMIDAS] =
     {
         {1, "Milanesa"},
         {2, "Fideos"},
@@ -76,10 +60,8 @@ int main()
 
     };
 
-
-
-    inicializarEmpleados(lista, 10);
-    harcodearEmpleados(lista);
+    inicializarEmpleados(empleados, 10);
+    harcodearEmpleados(empleados);
 
     do
     {
@@ -87,44 +69,19 @@ int main()
         {
 
         case 1:
-            agregarEmpleado(lista, 10, sectores, 5);
+            abmEmpelados(eEmpleado empleados[], LEN_EMPLEADOS, eSector sectores[], 5);
             system("pause");
             break;
         case 2:
-            eliminarEmpleado(lista, 10, sectores, 5);
+
             break;
         case 3:
-            modificarEmpleado(lista, 10, sectores, 5);
+
             break;
         case 4:
-            mostrarEmpleados(lista, 10, sectores, 5);
-            system("pause");
-            break;
-        case 5:
-            listarEmpleadosXSector(lista, 10, sectores, 5);
-            system("pause");
-            break;
-        case 6:
-            ordenarXSectorYNombre(lista, 10, sectores, 5);
-            system("pause");
-            break;
-        case 7:
-            mostrarEmpleadosMasGanadores(lista, 10, sectores, 5);
-            system("pause");
-            break;
-        case 8:
-            mostrarAlmuerzos(almuerzos, 21, lista, 10, comidas, 5);
-            system("pause");
-            break;
-        case 9:
-            mostrarAlmuerzosEmpleado(almuerzos, 21, lista, 10, comidas, 5, sectores, 5);
-            system("pause");
-            break;
-        case 10:
             seguir = 'n';
             break;
         }
-
     }
     while(seguir == 's');
 
@@ -178,78 +135,15 @@ int menu()
     int opcion;
     system("cls");
     printf("***Menu de Opciones***\n\n");
-    printf("1- Alta\n");
-    printf("2- Baja\n");
-    printf("3- Modificar\n");
-    printf("4- Listar\n");
-    printf("5- Listar todos los empleados de un sector\n");
-    printf("6- Ordenar empleados por sector y dentro del sector por nombre\n");
-    printf("7- Mostrar los datos de o los empleados que mas ganan por sector\n");
-    printf("8- Mostrar almuerzos\n");
-    printf("9- Mostrar almuerzos empleado\n");
-    printf("10- Salir\n");
-    printf("\nIngrese opcion: ");
-    fflush(stdin);
-    scanf("%d", &opcion);
-
+    printf("1- Alta de empleado\n");
+    printf("2- Alta menu\n");
+    printf("3- Alta Almuerzo\n");
+    printf("4- Salir\n\n");
+    opcion = getValidIntRango("Ingrese opcion: ", "Error, solo se admiten numeros. Reintente.\n", 1, 4);
     return opcion;
 }
 
-void agregarEmpleado(eEmpleado empleados[], int tam, eSector sectores[], int tamSector)
-{
-    eEmpleado nuevoEmpleado;
-    int indice;
-    int esta;
-    int legajo;
 
-    system("cls");
-    printf("  *** Alta Empleado ***\n\n");
-
-    indice = buscarLibre(empleados, tam);
-
-
-    if(indice == -1)
-    {
-        printf("No hay lugar\n\n");
-    }
-    else
-    {
-        printf("Ingrese legajo: ");
-        scanf("%d", &legajo);
-
-        esta = buscarEmpleado(empleados, tam, legajo);
-
-        if(esta != -1)
-        {
-            printf("Existe un empleado con el legajo %d\n", legajo);
-            mostrarEmpleado( empleados[esta], sectores, tamSector);
-        }
-        else
-        {
-            nuevoEmpleado.legajo = legajo;
-
-            printf("Ingrese nombre: ");
-            fflush(stdin);
-            gets(nuevoEmpleado.nombre);
-
-            printf("Ingrese sexo: ");
-            fflush(stdin);
-            scanf("%c", &nuevoEmpleado.sexo);
-
-            printf("Ingrese sueldo: ");
-            fflush(stdin);
-            scanf("%f", &nuevoEmpleado.sueldo);
-
-            nuevoEmpleado.idSector = elegirSector(sectores, 5);
-
-            nuevoEmpleado.isEmpty = 1;
-
-            empleados[indice] = nuevoEmpleado;
-
-        }
-    }
-
-}
 
 void mostrarEmpleado(eEmpleado emp, eSector sectores[], int tamSector)
 {
@@ -466,13 +360,13 @@ void harcodearEmpleados(eEmpleado x[])
 
     eEmpleado y[]=
     {
-        {1111, "fernandez", "ana", 5, 15000, 'f',   1},
-        {3333, "rodriguez", "luis", 4, 25000, 'm',  1},
-        {4444, "albarez", "alberto", 5,  10000, 'm', 1},
-        {5555, "cian", "julia", 1,  30000, 'f',  1},
-        {1313, "diaz", "julieta",  2, 23000, 'f', 1},
-        {4545, "castillo", "andrea", 5, 31000, 'f',   1},
-        {3232, "garcia", "mauro", 5, 27000, 'm',  1},
+        {1111, "fernandez", "ana", 5, 15000, 'f', {1, 2, 1980}, 1},
+        {3333, "rodriguez", "luis", 4, 25000, 'm', {1, 2, 1980}, 1},
+        {4444, "albarez", "alberto", 5,  10000, 'm',{1, 2, 1980}, 1},
+        {5555, "cian", "julia", 1,  30000, 'f', {1, 2, 1980}, 1},
+        {1313, "diaz", "julieta",  2, 23000, 'f',{1, 2, 1980},1},
+        {4545, "castillo", "andrea", 5, 31000, 'f',  {1, 2, 1980}, 1},
+        {3232, "garcia", "mauro", 5, 27000, 'm',  {1, 2, 1980},1},
     };
 
     for(int i=0; i<7; i++)

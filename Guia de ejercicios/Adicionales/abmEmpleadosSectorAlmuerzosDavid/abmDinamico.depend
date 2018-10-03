@@ -22,50 +22,90 @@
 	<string.h>
 	<conio.h>
 
-1538569629 source:d:\cosas\nestor_a\programacion_1_laboratorio_1\guia de ejercicios\adicionales\abmempleadossectoralmuerzosdavid\main.c
+1538572891 source:d:\cosas\nestor_a\programacion_1_laboratorio_1\guia de ejercicios\adicionales\abmempleadossectoralmuerzosdavid\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<conio.h>
 	"empleado.h"
 	"sector.h"
-	"almuerzo.h"
 	"comida.h"
+	"almuerzo.h"
+	"utn.h"
 
-1538569370 source:d:\cosas\nestor_a\programacion_1_laboratorio_1\guia de ejercicios\adicionales\abmempleadossectoralmuerzosdavid\empleado.c
+1538572163 source:d:\cosas\nestor_a\programacion_1_laboratorio_1\guia de ejercicios\adicionales\abmempleadossectoralmuerzosdavid\empleado.c
 	<stdio.h>
 	<stdlib.h>
 	"empleado.h"
 	"sector.h"
-	"almuerzo.h"
-
-1538569662 d:\cosas\nestor_a\programacion_1_laboratorio_1\guia de ejercicios\adicionales\abmempleadossectoralmuerzosdavid\empleado.h
-
-1538569379 source:d:\cosas\nestor_a\programacion_1_laboratorio_1\guia de ejercicios\adicionales\abmempleadossectoralmuerzosdavid\sector.c
-	<stdio.h>
-	<stdlib.h>
-	"empleado.h"
-	"sector.h"
-	"almuerzo.h"
-
-1538569379 d:\cosas\nestor_a\programacion_1_laboratorio_1\guia de ejercicios\adicionales\abmempleadossectoralmuerzosdavid\sector.h
-
-1538569262 source:d:\cosas\nestor_a\programacion_1_laboratorio_1\guia de ejercicios\adicionales\abmempleadossectoralmuerzosdavid\almuerzo.c
-	<stdio.h>
-	<stdlib.h>
-	"empleado.h"
-	"sector.h"
-	"almuerzo.h"
-
-1538569676 d:\cosas\nestor_a\programacion_1_laboratorio_1\guia de ejercicios\adicionales\abmempleadossectoralmuerzosdavid\almuerzo.h
-
-1538569416 source:d:\cosas\nestor_a\programacion_1_laboratorio_1\guia de ejercicios\adicionales\abmempleadossectoralmuerzosdavid\comida.c
-	<stdio.h>
-	<stdlib.h>
-	"empleado.h"
-	"sector.h"
-	"almuerzo.h"
 	"comida.h"
+	"almuerzo.h"
+	"utn.h"
 
-1538569416 d:\cosas\nestor_a\programacion_1_laboratorio_1\guia de ejercicios\adicionales\abmempleadossectoralmuerzosdavid\comida.h
+1538573094 d:\cosas\nestor_a\programacion_1_laboratorio_1\guia de ejercicios\adicionales\abmempleadossectoralmuerzosdavid\empleado.h
+	"empleado.h"
+	"sector.h"
+	"comida.h"
+	"almuerzo.h"
+	"fecha.h"
+	"utn.h"
+
+1538570630 source:d:\cosas\nestor_a\programacion_1_laboratorio_1\guia de ejercicios\adicionales\abmempleadossectoralmuerzosdavid\sector.c
+	<stdio.h>
+	<stdlib.h>
+	"empleado.h"
+	"sector.h"
+	"almuerzo.h"
+	"utn.h"
+
+1538572163 d:\cosas\nestor_a\programacion_1_laboratorio_1\guia de ejercicios\adicionales\abmempleadossectoralmuerzosdavid\sector.h
+	"empleado.h"
+	"sector.h"
+	"comida.h"
+	"almuerzo.h"
+	"utn.h"
+
+1538570630 source:d:\cosas\nestor_a\programacion_1_laboratorio_1\guia de ejercicios\adicionales\abmempleadossectoralmuerzosdavid\almuerzo.c
+	<stdio.h>
+	<stdlib.h>
+	"empleado.h"
+	"sector.h"
+	"almuerzo.h"
+	"utn.h"
+
+1538572715 d:\cosas\nestor_a\programacion_1_laboratorio_1\guia de ejercicios\adicionales\abmempleadossectoralmuerzosdavid\almuerzo.h
+	"empleado.h"
+	"sector.h"
+	"comida.h"
+	"almuerzo.h"
+	"fecha.h"
+	"utn.h"
+
+1538570630 source:d:\cosas\nestor_a\programacion_1_laboratorio_1\guia de ejercicios\adicionales\abmempleadossectoralmuerzosdavid\comida.c
+	<stdio.h>
+	<stdlib.h>
+	"empleado.h"
+	"sector.h"
+	"almuerzo.h"
+	"utn.h"
+
+1538572391 d:\cosas\nestor_a\programacion_1_laboratorio_1\guia de ejercicios\adicionales\abmempleadossectoralmuerzosdavid\comida.h
+	"empleado.h"
+	"sector.h"
+	"comida.h"
+	"almuerzo.h"
+	"utn.h"
+
+1538570534 d:\cosas\nestor_a\programacion_1_laboratorio_1\guia de ejercicios\adicionales\abmempleadossectoralmuerzosdavid\utn.h
+
+1538572899 source:d:\cosas\nestor_a\programacion_1_laboratorio_1\guia de ejercicios\adicionales\abmempleadossectoralmuerzosdavid\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	<ctype.h>
+
+1538572447 source:d:\cosas\nestor_a\programacion_1_laboratorio_1\guia de ejercicios\adicionales\abmempleadossectoralmuerzosdavid\fecha.c
+
+1538572494 d:\cosas\nestor_a\programacion_1_laboratorio_1\guia de ejercicios\adicionales\abmempleadossectoralmuerzosdavid\fecha.h
 
