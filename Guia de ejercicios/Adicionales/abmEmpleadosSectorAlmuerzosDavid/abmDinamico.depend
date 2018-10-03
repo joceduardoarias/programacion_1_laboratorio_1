@@ -22,7 +22,7 @@
 	<string.h>
 	<conio.h>
 
-1538572891 source:d:\cosas\nestor_a\programacion_1_laboratorio_1\guia de ejercicios\adicionales\abmempleadossectoralmuerzosdavid\main.c
+1538576799 source:d:\cosas\nestor_a\programacion_1_laboratorio_1\guia de ejercicios\adicionales\abmempleadossectoralmuerzosdavid\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -33,16 +33,14 @@
 	"almuerzo.h"
 	"utn.h"
 
-1538572163 source:d:\cosas\nestor_a\programacion_1_laboratorio_1\guia de ejercicios\adicionales\abmempleadossectoralmuerzosdavid\empleado.c
+1538577409 source:d:\cosas\nestor_a\programacion_1_laboratorio_1\guia de ejercicios\adicionales\abmempleadossectoralmuerzosdavid\empleado.c
 	<stdio.h>
 	<stdlib.h>
 	"empleado.h"
 	"sector.h"
-	"comida.h"
-	"almuerzo.h"
 	"utn.h"
 
-1538573094 d:\cosas\nestor_a\programacion_1_laboratorio_1\guia de ejercicios\adicionales\abmempleadossectoralmuerzosdavid\empleado.h
+1538576547 d:\cosas\nestor_a\programacion_1_laboratorio_1\guia de ejercicios\adicionales\abmempleadossectoralmuerzosdavid\empleado.h
 	"empleado.h"
 	"sector.h"
 	"comida.h"
@@ -65,7 +63,7 @@
 	"almuerzo.h"
 	"utn.h"
 
-1538570630 source:d:\cosas\nestor_a\programacion_1_laboratorio_1\guia de ejercicios\adicionales\abmempleadossectoralmuerzosdavid\almuerzo.c
+1538574612 source:d:\cosas\nestor_a\programacion_1_laboratorio_1\guia de ejercicios\adicionales\abmempleadossectoralmuerzosdavid\almuerzo.c
 	<stdio.h>
 	<stdlib.h>
 	"empleado.h"
@@ -73,7 +71,7 @@
 	"almuerzo.h"
 	"utn.h"
 
-1538572715 d:\cosas\nestor_a\programacion_1_laboratorio_1\guia de ejercicios\adicionales\abmempleadossectoralmuerzosdavid\almuerzo.h
+1538574125 d:\cosas\nestor_a\programacion_1_laboratorio_1\guia de ejercicios\adicionales\abmempleadossectoralmuerzosdavid\almuerzo.h
 	"empleado.h"
 	"sector.h"
 	"comida.h"
@@ -96,9 +94,9 @@
 	"almuerzo.h"
 	"utn.h"
 
-1538570534 d:\cosas\nestor_a\programacion_1_laboratorio_1\guia de ejercicios\adicionales\abmempleadossectoralmuerzosdavid\utn.h
+1538575018 d:\cosas\nestor_a\programacion_1_laboratorio_1\guia de ejercicios\adicionales\abmempleadossectoralmuerzosdavid\utn.h
 
-1538572899 source:d:\cosas\nestor_a\programacion_1_laboratorio_1\guia de ejercicios\adicionales\abmempleadossectoralmuerzosdavid\utn.c
+1538575494 source:d:\cosas\nestor_a\programacion_1_laboratorio_1\guia de ejercicios\adicionales\abmempleadossectoralmuerzosdavid\utn.c
 	<stdio.h>
 	<stdlib.h>
 	<time.h>

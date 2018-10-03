@@ -12,7 +12,10 @@ typedef struct
     int id; //autoincremental
     int idEmpleado; //debe existir
     int IdComida; //debe existir
+    int isEmpty;
     eFecha fechaAlmuerzo;
 } eAlmuerzo;
+
+void inicializarAlmuerzos(eAlmuerzo almuerzos[], int tamanio);
 
 #endif // ALMUERZO_H_INCLUDED

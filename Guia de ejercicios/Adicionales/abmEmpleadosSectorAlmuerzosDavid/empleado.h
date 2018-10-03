@@ -22,13 +22,15 @@ typedef struct
 
 int menu();
 void inicializarEmpleados( eEmpleado x[], int tam);
+int getNextId(eEmpleado x[], int tam);
 int buscarLibre( eEmpleado x[], int tam);
 int buscarEmpleado(eEmpleado x[], int tam, int legajo);
 void mostrarEmpleado(eEmpleado emp, eSector sectores[], int tamSector);
 void mostrarEmpleados(eEmpleado nomina[], int tam, eSector sectores[], int tamSector);
-void abmEmpleado(eEmpleado empleados[], int tam, eSector sectores[], int tamSector);
+void abmEmpleado(eEmpleado empleados[], int tam, eSector sectores[], int tamSector); //abm general
+void altaEmpleado(eEmpleado empleados[], int tamanio, eSector sectores[], int tamSector, int indice); //alta
 void eliminarEmpleado(eEmpleado *empleados, int tam, eSector sectores[], int tamSector);
-void modificarEmpleado(eEmpleado empleados[], int tam, eSector sectores[], int tamSector);;
+void modificarEmpleado(eEmpleado empleados[], int tam, eSector sectores[], int tamSector);
 int elegirSector(eSector sectores[], int tam);
 void cargarDescripcion(eSector sectores[], int tamSector, int idSector, char cadena[]);
 void listarEmpleadosXSector(eEmpleado x[],int tam, eSector sectores[], int tamSector);

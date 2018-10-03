@@ -183,6 +183,8 @@ char getValidChar(char requestMessage[], char errorMessage[], char comparacionA,
  */
 float getValidFloat(char requestMessage[],char errorMessage[]);
 
+float getValidFloatMayor0(char requestMessage[],char errorMessage[]);
+
 /**
  * \brief Solicita un numero entero al usuario y lo valida con un comparando con 2 numeros
  * \param requestMessage char[] Es el mensaje a ser mostrado para solicitar el dato

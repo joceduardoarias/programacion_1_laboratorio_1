@@ -35,11 +35,11 @@ char getValidChar(char requestMessage[], char errorMessage[], char comparacionA,
     printf("%s",requestMessage);
     fflush(stdin);
     scanf("%c",&auxiliar);
-    while(auxiliar!='s' && auxiliar!='n'){
-        printf("%s",errorMessage);
-        printf("%s",requestMessage);
+    while(auxiliar!=comparacionA && auxiliar!=comparacionB){
+        printf("\n%s",errorMessage);
+        printf("\n%s",requestMessage);
         fflush(stdin);
-        scanf("%c",&auxiliar);
+        scanf("\n%c",&auxiliar);
 
     }
     return auxiliar;
@@ -312,6 +312,23 @@ float getValidFloat(char requestMessage[],char errorMessage[])
     while(1)
     {
         if (!getStringNumerosFlotantes(requestMessage,auxStr))
+        {
+            printf ("%s\n",errorMessage);
+            continue;
+        }
+        break;
+    }
+    auxFloat = atof(auxStr);
+    return auxFloat;
+}
+
+float getValidFloatMayor0(char requestMessage[],char errorMessage[])
+{
+    char auxStr[256];
+    float auxFloat;
+    while(1)
+    {
+        if (!getStringNumerosFlotantes(requestMessage,auxStr) && auxStr<0)
         {
             printf ("%s\n",errorMessage);
             continue;
