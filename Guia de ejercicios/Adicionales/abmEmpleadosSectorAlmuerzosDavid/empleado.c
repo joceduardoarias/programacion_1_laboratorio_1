@@ -153,7 +153,7 @@ void mostrarEmpleado(eEmpleado emp, eSector sectores[], int tamSector)
 
     cargarDescripcion(sectores, tamSector, emp.idSector, descripcion);
 
-    printf("\n%4d %10s %2c    %5.2f   %10s \n\n", emp.legajo, emp.nombre, emp.sexo, emp.sueldo, descripcion);
+    printf("\n%4d %10s %2c    %5.2f   %10s    %d | %d | %d\n\n", emp.legajo, emp.nombre, emp.sexo, emp.sueldo, descripcion, emp.fechaIngreso.dia, emp.fechaIngreso.mes, emp.fechaIngreso.anio);
 
 }
 
@@ -219,6 +219,11 @@ void modificarEmpleado(eEmpleado empleados[], int tam, eSector sectores[], int t
 
     char auxNombre[51];
     char auxApellido[51];
+    char auxSexo;
+    float auxSueldo;
+    int auxDia;
+    int auxMes;
+    int auxAnio;
 
     legajo = getValidInt("Ingrese legajo: ", "Error, solo se admiten numeros. Reintente.\n");
     indice = buscarEmpleado(empleados, tam, legajo);
@@ -228,13 +233,13 @@ void modificarEmpleado(eEmpleado empleados[], int tam, eSector sectores[], int t
     }
     else
     {
-        printf("\nLegajo  Nombre  Sexo    Sueldo     Sector\n\n");
+        printf("\nLegajo  Nombre  Sexo    Sueldo     Sector     Dia  Mes  Anio\n\n");
         mostrarEmpleado( empleados[indice], sectores, tamSector);
         printf("Menu de opciones\n\n1- Nombre\n2- Apellido\n3- Sexo\n4- Salario\n5- Fecha de ingreso\n6- Salir\n\n");
         opcion = getValidInt("Ingrese opcion: ", "Error, solo se admiten numeros. Reintente.\n");
         switch(opcion){
         case 1:
-            getValidStringRango("ingrese nuevo nombre: ", "Error, solo letras.\n", auxNombre, 51);
+            getValidStringRango("Ingrese nuevo nombre: ", "Error, solo letras.\n", auxNombre, 51);
             printf("Desea modificar \"%s\" por \"%s\"? (s/n): ", auxNombre, empleados[indice].nombre);
             confirmacion = getValidChar("Ingrese confirmacion: ", "Error\n", 's', 'n');
             if(confirmacion == 's'){
@@ -244,9 +249,58 @@ void modificarEmpleado(eEmpleado empleados[], int tam, eSector sectores[], int t
             else{
                 printf("Se cancelo modificacion\n");
             }
-
-
-
+            break;
+        case 2:
+            getValidStringRango("Ingrese nuevo apellido: ", "Error, solo letras.\n", auxApellido, 51);
+            printf("Desea modificar \"%s\" por \"%s\"? (s/n): ", auxApellido, empleados[indice].apellido);
+            confirmacion = getValidChar("Ingrese confirmacion: ", "Error\n", 's', 'n');
+            if(confirmacion == 's'){
+                strcpy(empleados[indice].apellido, auxApellido);
+                printf("Se modifico con exito\n");
+            }
+            else{
+                printf("Se cancelo modificacion\n");
+            }
+            break;
+        case 3:
+            auxSexo = getValidChar("Ingrese nuevo sexo: ", "Error, solo letras.\n", 'm', 'f');
+            printf("\nSe modificara \"%c\" por \"%c\"\n", auxSexo, empleados[indice].sexo);
+            confirmacion = getValidChar("\nIngrese confirmacion (s/n): ", "Error\n", 's', 'n');
+            if(confirmacion == 's'){
+                empleados[indice].sexo = auxSexo;
+                printf("Se modifico con exito\n");
+            }
+            else{
+                printf("Se cancelo modificacion\n");
+            }
+        case 4:
+            auxSueldo = getValidFloatMayor0("Ingrese nuevo sueldo: ", "Error, solo numeros.\n");
+            printf("\nSe modificara \"%.2f\" por \"%.2f\"\n", auxSueldo, empleados[indice].sueldo);
+            confirmacion = getValidChar("\nIngrese confirmacion (s/n): ", "Error\n", 's', 'n');
+            if(confirmacion == 's'){
+                empleados[indice].sueldo = auxSueldo;
+                printf("Se modifico con exito\n");
+            }
+            else{
+                printf("Se cancelo modificacion\n");
+            }
+            break;
+        case 5:
+            auxDia = getValidIntRango("Ingrese nuevo dia: ", "Error\n", 1, 31);
+            auxMes = getValidIntRango("Ingrese nuevo mes: ", "Error\n", 1, 31);
+            auxAnio = getValidIntRango("Ingrese nuevo anio: ", "Error\n", 1970, 2018);
+            printf("\nSe modificara \"%d | %d | %d\" por \"%d | %d | %d\"\n", auxDia, auxMes, auxAnio, empleados[indice].fechaIngreso.dia, empleados[indice].fechaIngreso.mes, empleados[indice].fechaIngreso.anio);
+            confirmacion = getValidChar("\nIngrese confirmacion (s/n): ", "Error\n", 's', 'n');
+            if(confirmacion == 's'){
+                empleados[indice].fechaIngreso.dia = auxDia;
+                empleados[indice].fechaIngreso.mes = auxMes;
+                empleados[indice].fechaIngreso.anio = auxAnio;
+                printf("Se modifico con exito\n");
+            }
+            else{
+                printf("Se cancelo modificacion\n");
+            }
+            break;
 
         }
     }
