@@ -20,4 +20,7 @@ int buscarCliente(eCliente clientes[], int tamanioClientes, int idCliente);
 void mostrarCliente(eCliente clientes);
 void mostrarClientes(eCliente clientes[], int tamanioClientes);
 void altaClientes(eCliente clientes[], int tamanioClientes);
+void bajaCliente(eCliente clientes[], int tamanioClientes);
+void listarClientes(eCliente clientes[], int tamanioClientes);
+void abmClientes(eCliente clientes[], int tamanioClientes);
 #endif // CLIENTES_H_INCLUDED

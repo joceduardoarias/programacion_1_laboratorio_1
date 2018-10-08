@@ -18,7 +18,7 @@ void hardcodeoClientes(eCliente clientes[])
     clientes[0].isEmpty = ACTIVO;
 
     clientes[1].idCliente = 2;
-    strcpy(clientes[1].apellido, "Fernandez");
+    strcpy(clientes[1].apellido, "Lopez");
     strcpy(clientes[1].nombre, "Lorena");
     clientes[1].sexo = 'f';
     strcpy(clientes[1].domicilio, "Deheza 417");
@@ -103,9 +103,11 @@ void mostrarCliente(eCliente clientes)
 void mostrarClientes(eCliente clientes[], int tamanioClientes)
 {
     printf("\n\t Id |      Apellido |        Nombre | Sexo |     Direccion\n\n");
-    for(int i=0; i<tamanioClientes; i++){
-        if(clientes[i].isEmpty == ACTIVO){
-        mostrarCliente(clientes[i]);
+    for(int i=0; i<tamanioClientes; i++)
+    {
+        if(clientes[i].isEmpty == ACTIVO)
+        {
+            mostrarCliente(clientes[i]);
         }
     }
 }
@@ -141,7 +143,11 @@ void altaCliente(eCliente clientes[], int tamanioClientes)
         sexoAux = getValidChar("Ingrese sexo: ", "Error de ingreso. Reintente.\n\n", 'm', 'f');
         getValidStringDireccionRango("Ingrese direccion: ", "Error, solo se admiten letras. Reintente.\n\n", direccionAux, 51);
 
-
+        nuevoCliente.idCliente = idCliente;
+        strcpy(nuevoCliente.apellido, apellidoAux);
+        strcpy(nuevoCliente.nombre, nombreAux);
+        nuevoCliente.sexo = sexoAux;
+        strcpy(nuevoCliente.domicilio, direccionAux);
 
         clientes[indice] = nuevoCliente;
         printf("\nSe agrego nuevo juego:\n\n");
@@ -151,11 +157,134 @@ void altaCliente(eCliente clientes[], int tamanioClientes)
     }
 }
 
+void modificarCliente(eCliente clientes[], int tamanioClientes)
+{
+    int idJuego;
+    int indice;
+    int opcion;
+    char confirmacion;
 
+    char descripcionAux[51];
+    float importeAux;
 
+    system("cls");
+    printf("  *** Modificar Juego ***\n\n");
+    idJuego = getValidInt("Ingrese el ID del juego: ", "Error, solo se admiten numeros. Reintente.\n\n");
+    indice = buscarJuego(juegos, tamanioJuegos, idJuego);
+    if( indice == -1)
+    {
+        printf("No hay ningun juego con el ID %d\n\n", idJuego);
+    }
+    else
+    {
+        printf("\n\tId  |     Descripcion  |  Importe\n\n");
+        mostrarJuego( juegos[indice]);
+        printf("\n Menu de opciones -->\n\n1- Modificar descripcion\n2- Modificar importe\n3- Salir\n\n");
+        opcion = getValidInt("Ingrese opcion: ", "Error, ingreso no valido. Reintente.\n\n");
+        switch(opcion)
+        {
+        case 1:
+            printf("\nModificar descripcion -->\n\n");
+            getValidStringRango("Ingrese nueva descripcion: ", "Error, solo se admiten letras.\n", descripcionAux, 51);
+            printf("\nSe modificara \"%s\" por \"%s\"", juegos[indice].descripcion, descripcionAux);
+            confirmacion = getValidChar("\nConfirma cambio (s/n)?: ", "Error al ingresar opcion. Reintente.\n\n", 's', 'n');
+            if(confirmacion == 'n')
+            {
+                printf("Se cancelo la modificacion de la descripcion.\n\n");
+            }
+            else
+            {
+                strcpy(juegos[indice].descripcion, descripcionAux);
+                printf("Se modifico la decripcion con exito.\n\n");
+            }
+            break;
+        case 2:
+            printf("\nModificar importe -->\n\n");
+            importeAux = getValidFloatMayor0("Ingrese importe: ", "Error solo se admiten numeros. Reintente.\n\n");
+            printf("\nSe modificara \"%.2f\" por \"%.2f\"", juegos[indice].importe, importeAux);
+            confirmacion = getValidChar("\nConfirma cambio (s/n)?: ", "Error al ingresar opcion. Reintente.\n\n", 's', 'n');
+            if(confirmacion == 'n')
+            {
+                printf("Se cancelo la modificacion del importe.\n\n");
+            }
+            else
+            {
+                juegos[indice].importe = importeAux;
+                printf("Se modifico el importe con exito.\n\n");
+            }
+            break;
+        case 3:
+            break;
+        default:
+            printf("Error, opcion incorrecta.\n\n");
 
+        }
+    }
 
+}
 
+void bajaCliente(eCliente clientes[], int tamanioClientes)
+{
+    int indice;
+    int idCliente;
+    char confirmacion;
+
+    system("cls");
+    printf("  *** Baja Cliente ***\n\n");
+
+    idCliente = getValidInt("Ingrese el ID del cliente: ", "Error, solo se admiten numeros. Reintente.\n\n");
+    indice = buscarCliente(clientes, tamanioClientes, idCliente);
+
+    if( indice == -1)
+    {
+        printf("No hay ningun cliente con el ID %d\n\n", idCliente);
+    }
+    else
+    {
+        printf("\n\t Id |      Apellido |        Nombre | Sexo |     Direccion\n\n");
+        mostrarCliente(clientes[indice]);
+        printf("\nSe eliminara el cliente.\n");
+        confirmacion = getValidChar("\nConfirma baja del cliente (s/n)?: ", "Error al ingresar opcion. Reintente.\n\n", 's', 'n');
+        if(confirmacion != 's')
+        {
+            printf("Borrado cancelado.\n\n");
+        }
+        else
+        {
+            clientes[indice].isEmpty = BAJA;
+            printf("Se ha eliminado el cliente con exito.\n\n");
+        }
+    }
+
+}
+
+void listarClientes(eCliente clientes[], int tamanioClientes)
+{
+    eCliente auxCliente;
+    system("cls");
+    printf("  *** Lista de Clientes ***\n");
+    printf("  Ordenados por Apellido (ascendente) y Nombre (descendente).\n\n");
+    for(int i=0; i<tamanioClientes-1; i++)
+    {
+        for(int j=i+1; j<tamanioClientes; j++)
+        {
+            if(strcmp(clientes[i].apellido, clientes[j].apellido) > 0)
+            {
+                auxCliente = clientes[i];
+                clientes[i] = clientes[j];
+                clientes[j] = auxCliente;
+            }
+            else if((strcmp(clientes[i].apellido, clientes[j].apellido) == 0) && strcmp(clientes[i].nombre, clientes[j].nombre) < 0)
+            {
+                auxCliente = clientes[i];
+                clientes[i] = clientes[j];
+                clientes[j] = auxCliente;
+            }
+        }
+    }
+    mostrarClientes(clientes, tamanioClientes);
+    printf("\n");
+}
 
 void abmClientes(eCliente clientes[], int tamanioClientes)
 {
@@ -169,15 +298,15 @@ void abmClientes(eCliente clientes[], int tamanioClientes)
             system("pause");
             break;
         case 2:
-           // modificarJuego(juegos, tamanioJuegos);
+            modificarCliente(clientes, tamanioClientes);
             system("pause");
             break;
         case 3:
-            //bajaJuego(juegos, tamanioJuegos);
+            bajaCliente(clientes, tamanioClientes);
             system("pause");
             break;
         case 4:
-            //listarJuegos(juegos, tamanioJuegos);
+            listarClientes(clientes, tamanioClientes);
             system("pause");
             break;
         case 5:

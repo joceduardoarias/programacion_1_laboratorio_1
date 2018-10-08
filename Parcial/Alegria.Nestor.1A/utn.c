@@ -35,7 +35,7 @@ char getValidChar(char requestMessage[], char errorMessage[], char comparacionA,
     printf("%s",requestMessage);
     fflush(stdin);
     scanf("%c",&auxiliar);
-    while(auxiliar!='s' && auxiliar!='n'){
+    while(auxiliar!=comparacionA && auxiliar!=comparacionB){
         printf("%s",errorMessage);
         printf("%s",requestMessage);
         fflush(stdin);
@@ -328,7 +328,7 @@ void getValidStringDireccionRango(char requestMessage[],char errorMessage[], cha
 {
     while(1)
     {
-        if (!getStringLetrasRango(requestMessage,input, tamanio))
+        if (!getStringLetrasRangoDireccion(requestMessage,input, tamanio))
         {
             printf ("%s\n",errorMessage);
             fflush(stdin);
@@ -363,7 +363,7 @@ float getValidFloatMayor0(char requestMessage[],char errorMessage[])
     float auxFloat;
     while(1)
     {
-        if (!getStringNumerosFlotantes(requestMessage,auxStr) || auxFloat < 0)
+        if (!getStringNumerosFlotantes(requestMessage,auxStr) || auxStr < 0)
         {
             printf ("%s\n",errorMessage);
             continue;

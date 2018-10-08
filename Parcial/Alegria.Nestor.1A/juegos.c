@@ -272,7 +272,6 @@ void bajaJuego(eJuego juegos[], int tamaniojuegos)
             printf("Se ha eliminado el juego con exito.\n\n");
         }
     }
-
 }
 
 void listarJuegos(eJuego juegos[], int tamanioJuegos)
