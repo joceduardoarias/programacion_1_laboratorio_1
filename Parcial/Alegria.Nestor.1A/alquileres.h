@@ -27,6 +27,9 @@ int buscarAlquiler(eAlquiler alquileres[], int tamanioAlquileres, int idAlquiler
 int juegosActivos(eJuego juegos[], int tamanioJuegos);
 int clientesActivos(eCliente clientes[], int tamanioClientes);
 
+void cargarNombre(eCliente clientes[], int tamanioClientes, int idCliente, char cadena[]);
+void cargarDescripcion(eJuego juegos[], int tamanioJuegos, int idJuego, char cadena[]);
+
 void abmAlquiler(eJuego juegos[], int tamaniojuegos, eCliente clientes[], int tamanioClientes, eAlquiler alquileres[], int tamanioAlquileres);
 
 #endif // ALQUILERES_H_INCLUDED

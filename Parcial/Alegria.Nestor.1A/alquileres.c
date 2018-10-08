@@ -79,6 +79,9 @@ void abmAlquiler(eJuego juegos[], int tamaniojuegos, eCliente clientes[], int ta
     int juegosActivo;
     int clientesActivo;
 
+    char descripcionJuego[51];
+    char nombreCliente[51];
+
     system("cls");
     printf(" *** ALTA ALQUILER ***\n\n");
     juegosActivo = juegosActivos(juegos, tamaniojuegos);
@@ -92,14 +95,14 @@ void abmAlquiler(eJuego juegos[], int tamaniojuegos, eCliente clientes[], int ta
     else
     {
         idAux = getNextIdAlquiler(alquileres, tamanioAlquileres);
-        if(juegosActivo != -1){
+        if(juegosActivo != 0){
             mostrarJuegos(juegos, tamaniojuegos);
             idJuegoAux = getValidIntRango("\nIngrese juego a alquilar: ", "Error de ingreso. Reintente.\n\n", 1, juegosActivo);
         }
         else{
             printf("\nAun no se han cargado juegos.\n\n");
         }
-        if(clientesActivo != -1){
+        if(clientesActivo != 0){
             mostrarClientes(clientes, tamanioClientes);
             idClienteAux = getValidIntRango("\nIngrese cliente: ", "Error de ingreso. Reintente.\n\n", 1, clientesActivo);
         }
@@ -119,12 +122,20 @@ void abmAlquiler(eJuego juegos[], int tamaniojuegos, eCliente clientes[], int ta
         alquilerAux.isEmpty = ACTIVO;
 
         alquileres[indice] = alquilerAux;
+
+        system("cls");
+        printf("\nSe agrego nuevo alquiler.\n\n");
+        cargarDescripcion(juegos, tamaniojuegos, alquileres[indice].codigoJuego, descripcionJuego);
+        cargarNombre(clientes, tamanioClientes, alquileres[indice].codigoCliente, nombreCliente);
+        printf("\tID Alquiler  | Nombre Cliente |      Juego    |  Fecha de alquiler\n\n");
+        printf("\t\t%02d   | %13s  |   %10s  |    %02d-%02d-%4d\n", alquileres[indice].idAlquiler, nombreCliente, descripcionJuego, alquileres[indice].fechaAlquiler.dia, alquileres[indice].fechaAlquiler.mes, alquileres[indice].fechaAlquiler.anio);
+        printf("\n");
     }
 }
 
 int juegosActivos(eJuego juegos[], int tamanioJuegos)
 {
-    int juegoActivo=-1;
+    int juegoActivo = 0;
     for(int i=0; i<tamanioJuegos; i++)
     {
         if(juegos[i].isEmpty == ACTIVO)
@@ -137,7 +148,7 @@ int juegosActivos(eJuego juegos[], int tamanioJuegos)
 
 int clientesActivos(eCliente clientes[], int tamanioClientes)
 {
-    int clientesActivos=-1;
+    int clientesActivos=0;
     for(int i=0; i<tamanioClientes; i++)
     {
         if(clientes[i].isEmpty == ACTIVO)
@@ -146,4 +157,29 @@ int clientesActivos(eCliente clientes[], int tamanioClientes)
         }
     }
     return clientesActivos;
+}
+
+
+void cargarNombre(eCliente clientes[], int tamanioClientes, int idCliente, char cadena[])
+{
+    for(int i=0; i < tamanioClientes; i++)
+    {
+        if( clientes[i].idCliente == idCliente)
+        {
+            strcpy(cadena, clientes[i].nombre);
+            break;
+        }
+    }
+}
+
+void cargarDescripcion(eJuego juegos[], int tamanioJuegos, int idJuego, char cadena[])
+{
+    for(int i=0; i < tamanioJuegos; i++)
+    {
+        if( juegos[i].idJuego == idJuego)
+        {
+            strcpy(cadena, juegos[i].descripcion);
+            break;
+        }
+    }
 }

@@ -184,7 +184,7 @@ int getValidIntRango(char requestMessage[],char errorMessage[], int lowLimit, in
         auxInt = atoi(auxStr);
         if(auxInt < lowLimit || auxInt > hiLimit)
         {
-            printf ("El numero del debe ser mayor a %d y menor a %d\n",lowLimit,hiLimit);
+            printf ("El numero debe ser mayor a %d y menor a %d\n",lowLimit,hiLimit);
             continue;
 
         }
