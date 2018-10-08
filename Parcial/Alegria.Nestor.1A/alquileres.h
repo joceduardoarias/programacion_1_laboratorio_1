@@ -24,7 +24,8 @@ int getNextIdAlquiler(eAlquiler alquileres[],int tamanioAlquiler);
 int iniciarEstadosAlquileres(eAlquiler alquileres [], int tamanioAlquileres);
 int buscarAlquilerLibre(eAlquiler alquileres[], int tamanioAlquileres);
 int buscarAlquiler(eAlquiler alquileres[], int tamanioAlquileres, int idAlquiler);
-
+int juegosActivos(eJuego juegos[], int tamanioJuegos);
+int clientesActivos(eCliente clientes[], int tamanioClientes);
 
 void abmAlquiler(eJuego juegos[], int tamaniojuegos, eCliente clientes[], int tamanioClientes, eAlquiler alquileres[], int tamanioAlquileres);
 
