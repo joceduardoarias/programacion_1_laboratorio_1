@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "juegos.h"
+#include "clientes.h"
 #include "utn.h"
 #define ACTIVO 0
 #define VACIO 1
@@ -22,11 +23,11 @@ int menu()
     return option;
 }
 
-int menuABMJuegos()
+int menuABM()
 {
     int option;
     system("cls");
-    printf(" *** ABM Juegos ***\n\n");
+    printf(" *** ABM ***\n\n");
     printf(":::::::::::::::::::::::::::::::::::::::\n\n");
     printf("  1- Alta\n");
     printf("  2- Modificar\n");
@@ -308,7 +309,7 @@ void abmJuegos(eJuego juegos[], int tamanioJuegos)
     char seguir = 's'; //Bandera continuar do-while.
     do
     {
-        switch(menuABMJuegos())
+        switch(menuABM())
         {
         case 1:
             altaJuego(juegos, tamanioJuegos);
@@ -334,9 +335,6 @@ void abmJuegos(eJuego juegos[], int tamanioJuegos)
         }
     }
     while(seguir == 's');
-
-
-
 }
 
 

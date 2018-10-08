@@ -204,4 +204,7 @@ void cleanStdin(void);
 
 float getValidFloatMayor0(char requestMessage[],char errorMessage[]);
 
+int getStringLetrasRangoDireccion(char mensaje[],char input[], int tamanio);
+void getValidStringDireccionRango(char requestMessage[],char errorMessage[], char input[], int tamanio);
+
 #endif // UTN_H_INCLUDED

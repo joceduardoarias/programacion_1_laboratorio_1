@@ -11,7 +11,7 @@ typedef struct
 } eJuego;
 
 int menu();
-int menuABMJuegos();
+int menuABM();
 void hardcodeoJuegos(eJuego juegos[]);
 int getNextId(eJuego juegos[],int tamanioJuegos);
 int iniciarEstadosJuegos(eJuego juegos [], int tamanioJuegos);

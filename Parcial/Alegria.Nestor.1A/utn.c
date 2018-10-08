@@ -305,6 +305,41 @@ void getValidStringRango(char requestMessage[],char errorMessage[], char input[]
     }
 }
 
+int getStringLetrasRangoDireccion(char mensaje[],char input[], int tamanio)
+{
+    char aux[256];
+    getString(mensaje,aux);
+    if(esAlfaNumerico(aux))
+    {
+        while(strlen(aux)>tamanio)
+        {
+            printf("\nError, supero la cantidad de caracteres permitidos\n\n");
+            getString(mensaje,aux);
+            continue;
+        }
+        corregirMayusculas(aux);
+        strcpy(input,aux);
+        return 1;
+    }
+    return 0;
+}
+
+void getValidStringDireccionRango(char requestMessage[],char errorMessage[], char input[], int tamanio)
+{
+    while(1)
+    {
+        if (!getStringLetrasRango(requestMessage,input, tamanio))
+        {
+            printf ("%s\n",errorMessage);
+            fflush(stdin);
+            continue;
+        }
+        cleanStdin();
+        break;
+    }
+}
+
+
 float getValidFloat(char requestMessage[],char errorMessage[])
 {
     char auxStr[256];
