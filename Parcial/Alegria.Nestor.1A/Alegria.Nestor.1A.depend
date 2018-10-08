@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1539000144 source:d:\n_alegria\programacion_1_laboratorio_1\parcial\alegria.nestor.1a\juegos.c
+1539002854 source:d:\n_alegria\programacion_1_laboratorio_1\parcial\alegria.nestor.1a\juegos.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -7,9 +7,9 @@
 	"utn.h"
 	"juegos.h"
 
-1539000044 d:\n_alegria\programacion_1_laboratorio_1\parcial\alegria.nestor.1a\juegos.h
+1539002523 d:\n_alegria\programacion_1_laboratorio_1\parcial\alegria.nestor.1a\juegos.h
 
-1538999663 source:d:\n_alegria\programacion_1_laboratorio_1\parcial\alegria.nestor.1a\main.c
+1539001423 source:d:\n_alegria\programacion_1_laboratorio_1\parcial\alegria.nestor.1a\main.c
 	<stdio.h>
 	<stdlib.h>
 	"juegos.h"
@@ -21,5 +21,5 @@
 	<string.h>
 	<ctype.h>
 
-1538508166 d:\n_alegria\programacion_1_laboratorio_1\parcial\alegria.nestor.1a\utn.h
+1539000369 d:\n_alegria\programacion_1_laboratorio_1\parcial\alegria.nestor.1a\utn.h
 
