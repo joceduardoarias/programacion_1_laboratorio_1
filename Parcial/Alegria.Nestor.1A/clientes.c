@@ -159,68 +159,98 @@ void altaCliente(eCliente clientes[], int tamanioClientes)
 
 void modificarCliente(eCliente clientes[], int tamanioClientes)
 {
-    int idJuego;
+    int idCliente;
     int indice;
     int opcion;
     char confirmacion;
 
-    char descripcionAux[51];
-    float importeAux;
+    char apellidoAux[51];
+    char nombreAux[51];
+    char sexoAux;
+    char direccionAux[51];
 
     system("cls");
-    printf("  *** Modificar Juego ***\n\n");
-    idJuego = getValidInt("Ingrese el ID del juego: ", "Error, solo se admiten numeros. Reintente.\n\n");
-    indice = buscarJuego(juegos, tamanioJuegos, idJuego);
+    printf("  *** Modificar Cliente ***\n\n");
+    idCliente = getValidInt("Ingrese el ID del cliente: ", "Error, solo se admiten numeros. Reintente.\n\n");
+    indice = buscarCliente(clientes, tamanioClientes, idCliente);
     if( indice == -1)
     {
-        printf("No hay ningun juego con el ID %d\n\n", idJuego);
+        printf("No hay ningun cliente con el ID %d\n\n", idCliente);
     }
     else
     {
-        printf("\n\tId  |     Descripcion  |  Importe\n\n");
-        mostrarJuego( juegos[indice]);
-        printf("\n Menu de opciones -->\n\n1- Modificar descripcion\n2- Modificar importe\n3- Salir\n\n");
+        printf("\n\t Id |      Apellido |        Nombre | Sexo |     Direccion\n\n");
+        mostrarCliente(clientes[indice]);
+        printf("\n Menu de opciones -->\n\n1- Modificar apellido\n2- Modificar nombre\n3- Sexo\n4- Domicilio\n5- Salir\n\n");
         opcion = getValidInt("Ingrese opcion: ", "Error, ingreso no valido. Reintente.\n\n");
         switch(opcion)
         {
         case 1:
-            printf("\nModificar descripcion -->\n\n");
-            getValidStringRango("Ingrese nueva descripcion: ", "Error, solo se admiten letras.\n", descripcionAux, 51);
-            printf("\nSe modificara \"%s\" por \"%s\"", juegos[indice].descripcion, descripcionAux);
+            printf("\nModificar apellido -->\n\n");
+            getValidStringRango("Ingrese nuevo apellido: ", "Error, solo se admiten letras.\n", apellidoAux, 51);
+            printf("\nSe modificara \"%s\" por \"%s\"", apellidoAux , clientes[indice].apellido);
             confirmacion = getValidChar("\nConfirma cambio (s/n)?: ", "Error al ingresar opcion. Reintente.\n\n", 's', 'n');
             if(confirmacion == 'n')
             {
-                printf("Se cancelo la modificacion de la descripcion.\n\n");
+                printf("Se cancelo la modificacion del apellido.\n\n");
             }
             else
             {
-                strcpy(juegos[indice].descripcion, descripcionAux);
-                printf("Se modifico la decripcion con exito.\n\n");
+                strcpy(clientes[indice].apellido, apellidoAux);
+                printf("Se modifico el apellido con exito.\n\n");
             }
             break;
         case 2:
-            printf("\nModificar importe -->\n\n");
-            importeAux = getValidFloatMayor0("Ingrese importe: ", "Error solo se admiten numeros. Reintente.\n\n");
-            printf("\nSe modificara \"%.2f\" por \"%.2f\"", juegos[indice].importe, importeAux);
+            printf("\nModificar nombre -->\n\n");
+            getValidStringRango("Ingrese nuevo nombre: ", "Error, solo se admiten letras.\n", nombreAux, 51);
+            printf("\nSe modificara \"%s\" por \"%s\"", nombreAux , clientes[indice].nombre);
             confirmacion = getValidChar("\nConfirma cambio (s/n)?: ", "Error al ingresar opcion. Reintente.\n\n", 's', 'n');
             if(confirmacion == 'n')
             {
-                printf("Se cancelo la modificacion del importe.\n\n");
+                printf("Se cancelo la modificacion del nombre.\n\n");
             }
             else
             {
-                juegos[indice].importe = importeAux;
-                printf("Se modifico el importe con exito.\n\n");
+                strcpy(clientes[indice].nombre, nombreAux);
+                printf("Se modifico el nombre con exito.\n\n");
             }
             break;
         case 3:
+            printf("\nModificar sexo -->\n\n");
+            sexoAux = getValidChar("Ingrese nuevo sexo: ", "Error, solo se admiten letras.\n", 'm', 'f');
+            printf("\nSe modificara \"%c\" por \"%c\"", sexoAux , clientes[indice].sexo);
+            confirmacion = getValidChar("\nConfirma cambio (s/n)?: ", "Error al ingresar opcion. Reintente.\n\n", 's', 'n');
+            if(confirmacion == 'n')
+            {
+                printf("Se cancelo la modificacion del sexo.\n\n");
+            }
+            else
+            {
+                clientes[indice].sexo = sexoAux;
+                printf("Se modifico el sexo con exito.\n\n");
+            }
+            break;
+        case 4:
+            printf("\nModificar direccion -->\n\n");
+            getValidStringDireccionRango("Ingrese nueva direccion: ", "Error, solo se admiten letras.\n", direccionAux, 51);
+            printf("\nSe modificara \"%s\" por \"%s\"", direccionAux, clientes[indice].domicilio);
+            confirmacion = getValidChar("\nConfirma cambio (s/n)?: ", "Error al ingresar opcion. Reintente.\n\n", 's', 'n');
+            if(confirmacion == 'n')
+            {
+                printf("Se cancelo la modificacion del nombre.\n\n");
+            }
+            else
+            {
+                strcpy(clientes[indice].domicilio, direccionAux);
+                printf("Se modifico la direccion con exito.\n\n");
+            }
+            break;
+        case 5:
             break;
         default:
             printf("Error, opcion incorrecta.\n\n");
-
         }
     }
-
 }
 
 void bajaCliente(eCliente clientes[], int tamanioClientes)
