@@ -67,6 +67,7 @@ int buscarAlquiler(eAlquiler alquileres[], int tamanioAlquileres, int idAlquiler
 void abmAlquiler(eJuego juegos[], int tamaniojuegos, eCliente clientes[], int tamanioClientes, eAlquiler alquileres[], int tamanioAlquileres)
 {
     eAlquiler alquilerAux;
+    int indice;
 
     int idAux;
     int idJuegoAux;
@@ -83,25 +84,51 @@ void abmAlquiler(eJuego juegos[], int tamaniojuegos, eCliente clientes[], int ta
     juegosActivo = juegosActivos(juegos, tamaniojuegos);
     clientesActivo = clientesActivos(clientes, tamanioClientes);
 
-    idAux = getNextIdAlquiler(alquileres, tamanioAlquileres);
-    mostrarJuegos(juegos, tamaniojuegos);
-    idJuegoAux = getValidIntRango("\nIngrese juego a alquilar: ", "Error de ingreso. Reintente.\n\n", 0, juegosActivo);
-    mostrarClientes(clientes, tamanioClientes);
-    idClienteAux = getValidIntRango("\nIngrese cliente: ", "Error de ingreso. Reintente.\n\n", 0, clientesActivo);
-    diaAux = getValidIntRango("Ingrese dia: ", "Error de ingreso, reintente.\n\n", 1, 31);
-    mesAux = getValidIntRango("Ingrese mes: ", "Error de ingreso, reintente.\n\n", 1, 12);
-    anioAux = getValidIntRango("Ingrese anio (2017/2019): ", "Error de ingreso, reintente.\n\n", 2017, 2019);
+    indice = buscarAlquilerLibre(alquileres, tamanioAlquileres);
+    if(indice == -1)
+    {
+        printf("No hay lugar para la carga de alquileres.\n\n");
+    }
+    else
+    {
+        idAux = getNextIdAlquiler(alquileres, tamanioAlquileres);
+        if(juegosActivo != -1){
+            mostrarJuegos(juegos, tamaniojuegos);
+            idJuegoAux = getValidIntRango("\nIngrese juego a alquilar: ", "Error de ingreso. Reintente.\n\n", 1, juegosActivo);
+        }
+        else{
+            printf("\nAun no se han cargado juegos.\n\n");
+        }
+        if(clientesActivo != -1){
+            mostrarClientes(clientes, tamanioClientes);
+            idClienteAux = getValidIntRango("\nIngrese cliente: ", "Error de ingreso. Reintente.\n\n", 1, clientesActivo);
+        }
+        else{
+            printf("\nAun no se han cargado clientes.\n\n");
+        }
+        diaAux = getValidIntRango("Ingrese dia de alquiler: ", "Error de ingreso, reintente.\n\n", 1, 31);
+        mesAux = getValidIntRango("Ingrese mes de alquiler: ", "Error de ingreso, reintente.\n\n", 1, 12);
+        anioAux = getValidIntRango("Ingrese anio de alquiler (2017/2019): ", "Error de ingreso, reintente.\n\n", 2017, 2019);
 
+        alquilerAux.idAlquiler = idAux;
+        alquilerAux.codigoJuego = idJuegoAux;
+        alquilerAux.codigoCliente = idClienteAux;
+        alquilerAux.fechaAlquiler.dia = diaAux;
+        alquilerAux.fechaAlquiler.mes = mesAux;
+        alquilerAux.fechaAlquiler.anio = anioAux;
+        alquilerAux.isEmpty = ACTIVO;
 
-
-
+        alquileres[indice] = alquilerAux;
+    }
 }
 
 int juegosActivos(eJuego juegos[], int tamanioJuegos)
 {
-    int juegoActivo=0;
-    for(int i=0; i<tamanioJuegos; i++){
-        if(juegos[i].isEmpty == ACTIVO){
+    int juegoActivo=-1;
+    for(int i=0; i<tamanioJuegos; i++)
+    {
+        if(juegos[i].isEmpty == ACTIVO)
+        {
             juegoActivo++;
         }
     }
@@ -110,9 +137,11 @@ int juegosActivos(eJuego juegos[], int tamanioJuegos)
 
 int clientesActivos(eCliente clientes[], int tamanioClientes)
 {
-    int clientesActivos=0;
-    for(int i=0; i<tamanioClientes; i++){
-        if(clientes[i].isEmpty == ACTIVO){
+    int clientesActivos=-1;
+    for(int i=0; i<tamanioClientes; i++)
+    {
+        if(clientes[i].isEmpty == ACTIVO)
+        {
             clientesActivos++;
         }
     }
