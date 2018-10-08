@@ -1,0 +1,25 @@
+# depslib dependency file v1.0
+1539000144 source:d:\n_alegria\programacion_1_laboratorio_1\parcial\alegria.nestor.1a\juegos.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"juegos.h"
+	"utn.h"
+	"juegos.h"
+
+1539000044 d:\n_alegria\programacion_1_laboratorio_1\parcial\alegria.nestor.1a\juegos.h
+
+1538999663 source:d:\n_alegria\programacion_1_laboratorio_1\parcial\alegria.nestor.1a\main.c
+	<stdio.h>
+	<stdlib.h>
+	"juegos.h"
+
+1539000369 source:d:\n_alegria\programacion_1_laboratorio_1\parcial\alegria.nestor.1a\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	<ctype.h>
+
+1538508166 d:\n_alegria\programacion_1_laboratorio_1\parcial\alegria.nestor.1a\utn.h
+
