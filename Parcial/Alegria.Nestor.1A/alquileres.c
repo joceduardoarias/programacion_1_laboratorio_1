@@ -95,7 +95,7 @@ int buscarAlquilerLibre(eAlquiler alquileres[], int tamanioAlquileres)
     for(int i=0; i< tamanioAlquileres; i++)
     {
 
-        if( alquileres[i].isEmpty == VACIO)
+        if(alquileres[i].isEmpty == VACIO)
         {
             indice = i;
             break;
@@ -149,6 +149,9 @@ void altaAlquiler(eJuego juegos[], int tamaniojuegos, eCliente clientes[], int t
     else
     {
         idAux = getNextIdAlquiler(alquileres, tamanioAlquileres);
+        printf("Id aux: %d", idAux);
+        printf("\nIndice : %d\n\n", indice);
+
         if(juegosActivo != 0)
         {
             mostrarJuegos(juegos, tamaniojuegos);
@@ -217,6 +220,36 @@ int clientesActivos(eCliente clientes[], int tamanioClientes)
     return clientesActivos;
 }
 
+void mostrarAlquiler(eJuego juegos[], int tamaniojuegos, eCliente clientes[], int tamanioClientes, eAlquiler alquileres[], int tamanioAlquileres, int indiceAlquiler)
+{
+    char descripcionJuego[20];
+    char nombreCliente[51];
+    printf("\n\tID Alquiler  | Nombre Cliente |      Juego    |  Fecha de alquiler\n\n");
+    for(int i = 0; i< tamanioAlquileres; i++)
+    {
+        for(int j = 0; j<tamanioClientes; j++)
+        {
+            if(alquileres[indiceAlquiler].codigoCliente == clientes[j].idCliente)
+            {
+                strcpy(nombreCliente, clientes[j].nombre);
+                break;
+            }
+        }
+        for(int k = 0; k<tamaniojuegos; k++)
+        {
+            if(alquileres[indiceAlquiler].codigoJuego == juegos[k].idJuego)
+            {
+                strcpy(descripcionJuego, juegos[k].descripcion);
+                break;
+            }
+        }
+
+
+    }
+    printf("\t\t%02d   | %13s  |   %10s  |    %02d-%02d-%4d\n", alquileres[indiceAlquiler].idAlquiler, nombreCliente, descripcionJuego, alquileres[indiceAlquiler].fechaAlquiler.dia, alquileres[indiceAlquiler].fechaAlquiler.mes, alquileres[indiceAlquiler].fechaAlquiler.anio);
+    printf("\n");
+}
+
 void mostrarAlquileres(eJuego juegos[], int tamaniojuegos, eCliente clientes[], int tamanioClientes, eAlquiler alquileres[], int tamanioAlquileres)
 {
     char descripcionJuego[20];
@@ -248,6 +281,40 @@ void mostrarAlquileres(eJuego juegos[], int tamaniojuegos, eCliente clientes[], 
     printf("\n");
 }
 
+void bajaAlquiler(eJuego juegos[], int tamaniojuegos, eCliente clientes[], int tamanioClientes, eAlquiler alquileres[], int tamanioAlquileres)
+{
+    int indice;
+    int idAlquiler;
+    char confirmacion;
+
+    system("cls");
+    printf("  *** Baja Alquiler ***\n\n");
+
+    idAlquiler = getValidInt("Ingrese el ID del alquiler: ", "Error, solo se admiten numeros. Reintente.\n\n");
+    indice = buscarAlquiler(alquileres, tamanioAlquileres, idAlquiler);
+
+    if( indice == -1)
+    {
+        printf("No hay ningun alquiler con el ID %d\n\n", idAlquiler);
+    }
+    else
+    {
+        mostrarAlquiler(juegos, tamaniojuegos, clientes, tamanioClientes, alquileres, tamanioAlquileres, indice);
+        printf("\nSe eliminara el alquiler.\n");
+        confirmacion = getValidChar("\nConfirma baja del alquiler (s/n)?: ", "Error al ingresar opcion. Reintente.\n\n", 's', 'n');
+        if(confirmacion != 's')
+        {
+            printf("Borrado cancelado.\n\n");
+        }
+        else
+        {
+            alquileres[indice].isEmpty = BAJA;
+            printf("Se ha eliminado el alquiler con exito.\n\n");
+        }
+    }
+}
+
+
 void listarAlquileres(eJuego juegos[], int tamaniojuegos, eCliente clientes[], int tamanioClientes, eAlquiler alquileres[], int tamanioAlquileres)
 {
     system("cls");
@@ -276,6 +343,7 @@ void abmAlquiler(eJuego juegos[], int tamaniojuegos, eCliente clientes[], int ta
             }
             else
             {
+
             }
             system("pause");
             break;
@@ -286,6 +354,7 @@ void abmAlquiler(eJuego juegos[], int tamaniojuegos, eCliente clientes[], int ta
             }
             else
             {
+                bajaAlquiler(juegos, tamaniojuegos, clientes, tamanioClientes, alquileres, tamanioAlquileres);
             }
             system("pause");
             break;

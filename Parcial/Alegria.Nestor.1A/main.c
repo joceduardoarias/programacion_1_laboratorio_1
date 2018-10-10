@@ -23,7 +23,7 @@ int main()
 
     hardcodeoJuegos(juegos); //Harcodea datos de 4 juegos.
     hardcodeoClientes(clientes); //Harcodea datos de 4 clientes.
-   // hardcodeoAlquileres(alquileres); //Harcodea datos de 4 alquileres.
+    hardcodeoAlquileres(alquileres); //Harcodea datos de 4 alquileres.
 
     do
     {

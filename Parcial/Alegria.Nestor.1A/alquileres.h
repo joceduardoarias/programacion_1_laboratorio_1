@@ -28,8 +28,10 @@ int buscarAlquiler(eAlquiler alquileres[], int tamanioAlquileres, int idAlquiler
 int juegosActivos(eJuego juegos[], int tamanioJuegos);
 int checkEmptyAlquileres(eAlquiler alquileres[], int tamanioAlquileres);
 int clientesActivos(eCliente clientes[], int tamanioClientes);
+void mostrarAlquiler(eJuego juegos[], int tamaniojuegos, eCliente clientes[], int tamanioClientes, eAlquiler alquileres[], int tamanioAlquileres, int indiceAlquiler);
 void mostrarAlquileres(eJuego juegos[], int tamaniojuegos, eCliente clientes[], int tamanioClientes, eAlquiler alquileres[], int tamanioAlquileres);
 void altaAlquiler(eJuego juegos[], int tamaniojuegos, eCliente clientes[], int tamanioClientes, eAlquiler alquileres[], int tamanioAlquileres);
+void bajaAlquiler(eJuego juegos[], int tamaniojuegos, eCliente clientes[], int tamanioClientes, eAlquiler alquileres[], int tamanioAlquileres);
 void listarAlquileres(eJuego juegos[], int tamaniojuegos, eCliente clientes[], int tamanioClientes, eAlquiler alquileres[], int tamanioAlquileres);
 void abmAlquiler(eJuego juegos[], int tamaniojuegos, eCliente clientes[], int tamanioClientes, eAlquiler alquileres[], int tamanioAlquileres);
 #endif // ALQUILERES_H_INCLUDED
