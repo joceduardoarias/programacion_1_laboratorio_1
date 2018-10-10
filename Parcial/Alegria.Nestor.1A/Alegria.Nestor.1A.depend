@@ -51,7 +51,7 @@
 	"juegos.h"
 	"clientes.h"
 
-1539141821 source:c:\users\noemi\desktop\programacion_1_laboratorio_1\parcial\alegria.nestor.1a\alquileres.c
+1539144105 source:c:\users\noemi\desktop\programacion_1_laboratorio_1\parcial\alegria.nestor.1a\alquileres.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -60,18 +60,18 @@
 	"clientes.h"
 	"utn.h"
 
-1539141462 c:\users\noemi\desktop\programacion_1_laboratorio_1\parcial\alegria.nestor.1a\alquileres.h
+1539144422 c:\users\noemi\desktop\programacion_1_laboratorio_1\parcial\alegria.nestor.1a\alquileres.h
 	"alquileres.h"
 	"juegos.h"
 	"clientes.h"
 
-1539139138 c:\users\noemi\desktop\programacion_1_laboratorio_1\parcial\alegria.nestor.1a\juegos.h
+1539143962 c:\users\noemi\desktop\programacion_1_laboratorio_1\parcial\alegria.nestor.1a\juegos.h
 
-1539139593 c:\users\noemi\desktop\programacion_1_laboratorio_1\parcial\alegria.nestor.1a\clientes.h
+1539144106 c:\users\noemi\desktop\programacion_1_laboratorio_1\parcial\alegria.nestor.1a\clientes.h
 
 1539131563 c:\users\noemi\desktop\programacion_1_laboratorio_1\parcial\alegria.nestor.1a\utn.h
 
-1539140767 source:c:\users\noemi\desktop\programacion_1_laboratorio_1\parcial\alegria.nestor.1a\clientes.c
+1539144106 source:c:\users\noemi\desktop\programacion_1_laboratorio_1\parcial\alegria.nestor.1a\clientes.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -79,7 +79,7 @@
 	"juegos.h"
 	"utn.h"
 
-1539140631 source:c:\users\noemi\desktop\programacion_1_laboratorio_1\parcial\alegria.nestor.1a\juegos.c
+1539144730 source:c:\users\noemi\desktop\programacion_1_laboratorio_1\parcial\alegria.nestor.1a\juegos.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -88,7 +88,7 @@
 	"utn.h"
 	"juegos.h"
 
-1539141356 source:c:\users\noemi\desktop\programacion_1_laboratorio_1\parcial\alegria.nestor.1a\main.c
+1539144536 source:c:\users\noemi\desktop\programacion_1_laboratorio_1\parcial\alegria.nestor.1a\main.c
 	<stdio.h>
 	<stdlib.h>
 	"juegos.h"

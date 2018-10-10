@@ -138,6 +138,19 @@ void mostrarClientes(eCliente clientes[], int tamanioClientes)
     }
 }
 
+int clientesActivos(eCliente clientes[], int tamanioClientes)
+{
+    int clientesActivos=0;
+    for(int i=0; i<tamanioClientes; i++)
+    {
+        if(clientes[i].isEmpty == ACTIVO)
+        {
+            clientesActivos++;
+        }
+    }
+    return clientesActivos;
+}
+
 void altaCliente(eCliente clientes[], int tamanioClientes)
 {
     eCliente nuevoCliente;

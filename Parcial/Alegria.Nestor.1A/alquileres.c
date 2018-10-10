@@ -194,32 +194,6 @@ void altaAlquiler(eJuego juegos[], int tamaniojuegos, eCliente clientes[], int t
     }
 }
 
-int juegosActivos(eJuego juegos[], int tamanioJuegos)
-{
-    int juegoActivo = 0;
-    for(int i=0; i<tamanioJuegos; i++)
-    {
-        if(juegos[i].isEmpty == ACTIVO)
-        {
-            juegoActivo++;
-        }
-    }
-    return juegoActivo;
-}
-
-int clientesActivos(eCliente clientes[], int tamanioClientes)
-{
-    int clientesActivos=0;
-    for(int i=0; i<tamanioClientes; i++)
-    {
-        if(clientes[i].isEmpty == ACTIVO)
-        {
-            clientesActivos++;
-        }
-    }
-    return clientesActivos;
-}
-
 void mostrarAlquiler(eJuego juegos[], int tamaniojuegos, eCliente clientes[], int tamanioClientes, eAlquiler alquileres[], int tamanioAlquileres, int indiceAlquiler)
 {
     char descripcionJuego[20];
