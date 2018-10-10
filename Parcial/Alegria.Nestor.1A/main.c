@@ -42,15 +42,15 @@ int main()
             system("pause");
             break;
         case 4:
+            abmInformes(juegos, TAM_JUEGOS, clientes, TAM_CLIENTES, alquileres, TAM_ALQUILERES);
+            system("pause");
+            break;
+        case 5:
             seguir = 'n';
             break;
         default:
             printf("Error, ingreso una opcion no valida. Reintente.\n\n");
         }
-
-
-
-
     }
     while(seguir == 's');
     return 0;

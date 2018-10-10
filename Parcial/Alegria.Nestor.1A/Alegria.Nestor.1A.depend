@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1539005219 source:d:\n_alegria\programacion_1_laboratorio_1\parcial\alegria.nestor.1a\juegos.c
+1539179283 source:d:\n_alegria\programacion_1_laboratorio_1\parcial\alegria.nestor.1a\juegos.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -8,9 +8,9 @@
 	"utn.h"
 	"juegos.h"
 
-1539003830 d:\n_alegria\programacion_1_laboratorio_1\parcial\alegria.nestor.1a\juegos.h
+1539143964 d:\n_alegria\programacion_1_laboratorio_1\parcial\alegria.nestor.1a\juegos.h
 
-1539006965 source:d:\n_alegria\programacion_1_laboratorio_1\parcial\alegria.nestor.1a\main.c
+1539179421 source:d:\n_alegria\programacion_1_laboratorio_1\parcial\alegria.nestor.1a\main.c
 	<stdio.h>
 	<stdlib.h>
 	"juegos.h"
@@ -18,16 +18,16 @@
 	"alquileres.h"
 	"utn.h"
 
-1539009792 source:d:\n_alegria\programacion_1_laboratorio_1\parcial\alegria.nestor.1a\utn.c
+1539131564 source:d:\n_alegria\programacion_1_laboratorio_1\parcial\alegria.nestor.1a\utn.c
 	<stdio.h>
 	<stdlib.h>
 	<time.h>
 	<string.h>
 	<ctype.h>
 
-1539004827 d:\n_alegria\programacion_1_laboratorio_1\parcial\alegria.nestor.1a\utn.h
+1539131564 d:\n_alegria\programacion_1_laboratorio_1\parcial\alegria.nestor.1a\utn.h
 
-1539006316 source:d:\n_alegria\programacion_1_laboratorio_1\parcial\alegria.nestor.1a\clientes.c
+1539144108 source:d:\n_alegria\programacion_1_laboratorio_1\parcial\alegria.nestor.1a\clientes.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -35,9 +35,9 @@
 	"juegos.h"
 	"utn.h"
 
-1539005451 d:\n_alegria\programacion_1_laboratorio_1\parcial\alegria.nestor.1a\clientes.h
+1539144108 d:\n_alegria\programacion_1_laboratorio_1\parcial\alegria.nestor.1a\clientes.h
 
-1539009979 source:d:\n_alegria\programacion_1_laboratorio_1\parcial\alegria.nestor.1a\alquileres.c
+1539144106 source:d:\n_alegria\programacion_1_laboratorio_1\parcial\alegria.nestor.1a\alquileres.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -46,7 +46,7 @@
 	"clientes.h"
 	"utn.h"
 
-1539008812 d:\n_alegria\programacion_1_laboratorio_1\parcial\alegria.nestor.1a\alquileres.h
+1539144424 d:\n_alegria\programacion_1_laboratorio_1\parcial\alegria.nestor.1a\alquileres.h
 	"alquileres.h"
 	"juegos.h"
 	"clientes.h"
@@ -97,6 +97,82 @@
 	"utn.h"
 
 1539131563 source:c:\users\noemi\desktop\programacion_1_laboratorio_1\parcial\alegria.nestor.1a\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	<ctype.h>
+
+1539179031 source:d:\n_alegria\programacion_1_laboratorio_1\parcial\alegria.nestor.1a\informes.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"juegos.h"
+	"clientes.h"
+	"alquileres.h"
+	"informes.h"
+	"utn.h"
+
+1539178135 d:\n_alegria\programacion_1_laboratorio_1\parcial\alegria.nestor.1a\informes.h
+
+1539144106 source:c:\users\usuario\desktop\programacion_1_laboratorio_1\parcial\alegria.nestor.1a\alquileres.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"alquileres.h"
+	"juegos.h"
+	"clientes.h"
+	"utn.h"
+
+1539144424 c:\users\usuario\desktop\programacion_1_laboratorio_1\parcial\alegria.nestor.1a\alquileres.h
+	"alquileres.h"
+	"juegos.h"
+	"clientes.h"
+
+1539143964 c:\users\usuario\desktop\programacion_1_laboratorio_1\parcial\alegria.nestor.1a\juegos.h
+
+1539144108 c:\users\usuario\desktop\programacion_1_laboratorio_1\parcial\alegria.nestor.1a\clientes.h
+
+1539131564 c:\users\usuario\desktop\programacion_1_laboratorio_1\parcial\alegria.nestor.1a\utn.h
+
+1539144108 source:c:\users\usuario\desktop\programacion_1_laboratorio_1\parcial\alegria.nestor.1a\clientes.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"clientes.h"
+	"juegos.h"
+	"utn.h"
+
+1539205313 source:c:\users\usuario\desktop\programacion_1_laboratorio_1\parcial\alegria.nestor.1a\informes.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"juegos.h"
+	"clientes.h"
+	"alquileres.h"
+	"informes.h"
+	"utn.h"
+
+1539204960 c:\users\usuario\desktop\programacion_1_laboratorio_1\parcial\alegria.nestor.1a\informes.h
+
+1539179284 source:c:\users\usuario\desktop\programacion_1_laboratorio_1\parcial\alegria.nestor.1a\juegos.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"juegos.h"
+	"clientes.h"
+	"utn.h"
+	"juegos.h"
+
+1539203017 source:c:\users\usuario\desktop\programacion_1_laboratorio_1\parcial\alegria.nestor.1a\main.c
+	<stdio.h>
+	<stdlib.h>
+	"juegos.h"
+	"clientes.h"
+	"alquileres.h"
+	"utn.h"
+
+1539131564 source:c:\users\usuario\desktop\programacion_1_laboratorio_1\parcial\alegria.nestor.1a\utn.c
 	<stdio.h>
 	<stdlib.h>
 	<time.h>
