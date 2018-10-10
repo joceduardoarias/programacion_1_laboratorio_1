@@ -63,6 +63,20 @@ void hardcodeoJuegos(eJuego juegos[])
     juegos[3].isEmpty = ACTIVO;
 }
 
+int checkEmptyJuegos(eJuego juegos[], int tamanioJuegos)
+{
+    int flag = -1;
+    for(int i=0; i<tamanioJuegos; i++)
+    {
+        if(juegos[i].isEmpty == ACTIVO)
+        {
+            flag = 0;
+            break;
+        }
+    }
+    return flag;
+}
+
 int getNextId(eJuego juegos[],int tamanioJuegos)
 {
     int flag = 0;
@@ -317,9 +331,11 @@ void listarJuegos(eJuego juegos[], int tamanioJuegos)
 
 void abmJuegos(eJuego juegos[], int tamanioJuegos)
 {
+    int checkArrayJuegos;
     char seguir = 's'; //Bandera continuar do-while.
     do
     {
+        checkArrayJuegos = checkEmptyJuegos(juegos, tamanioJuegos);
         switch(menuABM("Juegos"))
         {
         case 1:
@@ -327,15 +343,36 @@ void abmJuegos(eJuego juegos[], int tamanioJuegos)
             system("pause");
             break;
         case 2:
-            modificarJuego(juegos, tamanioJuegos);
+            if(checkArrayJuegos == -1) //Si checkArray() es -1 aun no hay juegos cargados en el sistema y lo informa.
+            {
+                printf("No hay empleados dados de alta en el sistema.\n\n");
+            }
+            else
+            {
+                modificarJuego(juegos, tamanioJuegos);
+            }
             system("pause");
             break;
         case 3:
-            bajaJuego(juegos, tamanioJuegos);
+            if(checkArrayJuegos == -1) //Si checkArray() es -1 aun no hay juegos cargados en el sistema y lo informa.
+            {
+                printf("No hay empleados dados de alta en el sistema.\n\n");
+            }
+            else
+            {
+                bajaJuego(juegos, tamanioJuegos);
+            }
             system("pause");
             break;
         case 4:
-            listarJuegos(juegos, tamanioJuegos);
+            if(checkArrayJuegos == -1) //Si checkArray() es -1 aun no hay juegos cargados en el sistema y lo informa.
+            {
+                printf("No hay empleados dados de alta en el sistema.\n\n");
+            }
+            else
+            {
+                listarJuegos(juegos, tamanioJuegos);
+            }
             system("pause");
             break;
         case 5:

@@ -18,7 +18,7 @@ int getNextIdCliente(eCliente clientes[],int tamanioClientes);
 int buscarClienteLibre(eCliente clientes[], int tamanioClientes);
 int buscarCliente(eCliente clientes[], int tamanioClientes, int idCliente);
 void cargarNombre(eCliente clientes[], int tamanioClientes, int idCliente, char cadena[]);
-
+int checkEmptyClientes(eCliente clientes[], int tamanioClientes);
 void mostrarCliente(eCliente clientes);
 void mostrarClientes(eCliente clientes[], int tamanioClientes);
 void altaClientes(eCliente clientes[], int tamanioClientes);

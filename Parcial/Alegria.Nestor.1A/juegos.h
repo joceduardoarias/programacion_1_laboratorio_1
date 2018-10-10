@@ -13,6 +13,7 @@ typedef struct
 int menu();
 int menuABM(char mensaje[]);
 void hardcodeoJuegos(eJuego juegos[]);
+int checkEmptyJuegos(eJuego juegos[], int tamanioJuegos);
 int getNextId(eJuego juegos[],int tamanioJuegos);
 int iniciarEstadosJuegos(eJuego juegos [], int tamanioJuegos);
 void mostrarJuego(eJuego juegos);
