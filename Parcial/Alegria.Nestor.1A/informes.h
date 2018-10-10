@@ -13,6 +13,7 @@ void cantidadJuegosNoSuperanPromedio(eJuego juegos[], int tamanioJuegos);
 //Fin punto 1 y dos
 
 void listarClientesPorJuego(eJuego juegos[], int tamaniojuegos, eCliente clientes[], int tamanioClientes, eAlquiler alquileres[], int tamanioAlquileres);
+void listarJuegosPorCliente(eJuego juegos[], int tamaniojuegos, eCliente clientes[], int tamanioClientes, eAlquiler alquileres[], int tamanioAlquileres);
 int elegirCliente(eCliente clientes[], int tamanioClientes);
 int elegirJuego(eJuego juegos[], int tamanioJuegos);
 

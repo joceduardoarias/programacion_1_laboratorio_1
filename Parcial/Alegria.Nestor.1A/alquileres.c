@@ -17,7 +17,7 @@ int isEmpty;
 void hardcodeoAlquileres(eAlquiler alquileres[])
 {
     alquileres[0].idAlquiler = 1;
-    alquileres[0].codigoJuego = 1;
+    alquileres[0].codigoJuego = 2;
     alquileres[0].codigoCliente = 2;
     alquileres[0].fechaAlquiler.dia = 10;
     alquileres[0].fechaAlquiler.mes = 02;
@@ -42,11 +42,19 @@ void hardcodeoAlquileres(eAlquiler alquileres[])
 
     alquileres[3].idAlquiler = 4;
     alquileres[3].codigoJuego = 2;
-    alquileres[3].codigoCliente = 2;
+    alquileres[3].codigoCliente = 3;
     alquileres[3].fechaAlquiler.dia = 05;
     alquileres[3].fechaAlquiler.mes = 10;
     alquileres[3].fechaAlquiler.anio = 2017;
     alquileres[3].isEmpty = ACTIVO;
+
+    alquileres[4].idAlquiler = 5;
+    alquileres[4].codigoJuego = 2;
+    alquileres[4].codigoCliente = 3;
+    alquileres[4].fechaAlquiler.dia = 05;
+    alquileres[4].fechaAlquiler.mes = 10;
+    alquileres[4].fechaAlquiler.anio = 2018;
+    alquileres[4].isEmpty = ACTIVO;
 }
 
 int getNextIdAlquiler(eAlquiler alquileres[],int tamanioAlquiler)

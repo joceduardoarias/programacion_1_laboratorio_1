@@ -19,13 +19,13 @@ int menuInformes()
     printf("  1- Promedio y total de los Importes de los juegos alquilados.\n");
     printf("  2- Cantidad de juegos cuyo importe NO supera el promedio del item anterior.\n");
     printf("  3- Listar todos los clientes que alquilaron un juego determinado.\n");
-    printf("  4- \n");
+    printf("  4- Listar todos los juegos que fueron alquilados por un cliente.\n");
     printf("  5- \n");
     printf("  6- \n");
     printf("  7- \n");
     printf("  8- \n");
     printf("  9- Listar todos los juegos ordenados por Importe (descendente). Metodo Burbujero.\n");
-    printf("  10- Listar todos los clientes ordenados por APellido (ascendente). Metodo Insercion.\n");
+    printf("  10- Listar todos los clientes ordenados por Apellido (ascendente). Metodo Insercion.\n");
     printf("  11- Salir\n");
     printf("\n:::::::::::::::::::::::::::::::::::::::\n\n");
     option = getInt("Ingrese opcion: ");
@@ -139,17 +139,21 @@ void cantidadJuegosNoSuperanPromedio(eJuego juegos[], int tamanioJuegos)
     printf("Existen %d juegos cuyos importes no superan el promedio.\n\n", totalNoSuperanPromedio);
 }
 
+
 void listarClientesPorJuego(eJuego juegos[], int tamaniojuegos, eCliente clientes[], int tamanioClientes, eAlquiler alquileres[], int tamanioAlquileres)
 {
     int idJuego;
     int indiceJuego;
+    int flag = 0;
+    char descripcionJuego[51];
 
     system("cls");
     printf(" Listar todos los clientes que alquilaron un juego determinado.\n\n");
 
     idJuego = elegirJuego(juegos, tamaniojuegos);
     indiceJuego = buscarJuego(juegos, tamaniojuegos, idJuego);
-
+    cargarDescripcion(juegos, tamaniojuegos, juegos[indiceJuego].idJuego, descripcionJuego);
+    printf("\nClientes que alquilaron el juego \"%s\"\n\n", descripcionJuego);
 
     for (int i=0; i<tamanioAlquileres; i++)
     {
@@ -161,39 +165,57 @@ void listarClientesPorJuego(eJuego juegos[], int tamaniojuegos, eCliente cliente
                 {
                     if (alquileres[i].codigoCliente == clientes[j].idCliente)
                     {
-                        mostrarCliente(clientes[j]);
+                        printf("\tID alquiler %d  | Nombre  %s\n", alquileres[i].idAlquiler, clientes[j].nombre);
+                        flag = 1;
                     }
 
                 }
             }
         }
     }
+    if(flag == 0){
+        printf("Aun no se alquilo el juego.\n");
+    }
+    printf("\n");
 }
 
-void listarJuegosPorCliente(eJuego juegos[], int tamaniojuegos, eCliente clientes[], int tamanioClientes, eAlquiler alquileres[], int tamanioAlquileres){
-    int i, j, codigoCliente;
-    fflush(stdin);
-    codigoCliente = elegirCliente(clientes, tamanioClientes);
-    int indiceCliente = buscarCliente(clientes, tamanioClientes, codigoCliente);
-    if (indiceCliente == -1){
-        printf("\nNo existe el codigo.\n\n");
-    }
-    else{
-        for (i=0; i<alquileres; i++){
-            if (alquileres[i].isEmpty == ACTIVO){
-                if (codigoCliente == alquileres[i].codigoCliente){
-                    for (j=0; j<tamaniojuegos; j++){
-                        if (alquileres[i].codigoJuego == juegos[j].idJuego){
-                            mostrarJuego(juegos[j]);
-                        }
+void listarJuegosPorCliente(eJuego juegos[], int tamaniojuegos, eCliente clientes[], int tamanioClientes, eAlquiler alquileres[], int tamanioAlquileres)
+{
+    int idCliente;
+    int indiceCliente;
+    int flag = 0;
+    char nombreCliente[51];
+
+    system("cls");
+    printf(" Listar todos los juegos que fueron alquilados por un cliente.\n\n");
+
+    idCliente = elegirCliente(clientes, tamanioClientes);
+    indiceCliente = buscarCliente(clientes, tamanioClientes, idCliente);
+    cargarNombre(clientes, tamanioClientes, clientes[indiceCliente].idCliente, nombreCliente);
+    printf("\nJuegos que fueron alquilados por el cliente \"%s\"\n\n", nombreCliente);
+    for (int i=0; i<tamanioAlquileres; i++)
+    {
+        if (alquileres[i].isEmpty == ACTIVO)
+        {
+            if (idCliente == alquileres[i].codigoCliente)
+            {
+                for (int j=0; j<tamaniojuegos; j++)
+                {
+                    if (alquileres[i].codigoJuego == juegos[j].idJuego)
+                    {
+                        printf("\tID alquiler %d  | Juego  %s\n", alquileres[i].idAlquiler, juegos[j].descripcion);
+                        flag = 1;
                     }
+
                 }
             }
         }
     }
+    if(flag == 0){
+        printf("Aun no se alquilo el juego.\n");
+    }
+    printf("\n");
 }
-
-
 
 int elegirCliente(eCliente clientes[], int tamanioClientes)
 {
