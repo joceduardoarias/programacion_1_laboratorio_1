@@ -357,7 +357,7 @@ void abmClientes(eCliente clientes[], int tamanioClientes)
             system("pause");
             break;
         case 2:
-            if(checkArrayClientes == -1) //Si checkArray() es -1 aun no hay juegos cargados en el sistema y lo informa.
+            if(checkArrayClientes == -1) //Si checkArrayClientes() es -1 aun no hay clientes cargados en el sistema y lo informa.
             {
                 printf("No hay clientes dados de alta en el sistema.\n\n");
             }
@@ -368,7 +368,7 @@ void abmClientes(eCliente clientes[], int tamanioClientes)
             system("pause");
             break;
         case 3:
-            if(checkArrayClientes == -1) //Si checkArray() es -1 aun no hay juegos cargados en el sistema y lo informa.
+            if(checkArrayClientes == -1) //Si checkArrayClientes() es -1 aun no hay clientes cargados en el sistema y lo informa.
             {
                 printf("No hay clientes dados de alta en el sistema.\n\n");
             }
@@ -379,7 +379,7 @@ void abmClientes(eCliente clientes[], int tamanioClientes)
             system("pause");
             break;
         case 4:
-            if(checkArrayClientes == -1) //Si checkArray() es -1 aun no hay juegos cargados en el sistema y lo informa.
+            if(checkArrayClientes == -1) //Si checkArrayClientes() es -1 aun no hay clientes cargados en el sistema y lo informa.
             {
                 printf("No hay clientes dados de alta en el sistema.\n\n");
             }

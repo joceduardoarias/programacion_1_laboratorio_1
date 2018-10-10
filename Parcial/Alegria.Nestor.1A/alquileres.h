@@ -26,6 +26,7 @@ int iniciarEstadosAlquileres(eAlquiler alquileres [], int tamanioAlquileres);
 int buscarAlquilerLibre(eAlquiler alquileres[], int tamanioAlquileres);
 int buscarAlquiler(eAlquiler alquileres[], int tamanioAlquileres, int idAlquiler);
 int juegosActivos(eJuego juegos[], int tamanioJuegos);
+int checkEmptyAlquileres(eAlquiler alquileres[], int tamanioAlquileres);
 int clientesActivos(eCliente clientes[], int tamanioClientes);
 void mostrarAlquileres(eJuego juegos[], int tamaniojuegos, eCliente clientes[], int tamanioClientes, eAlquiler alquileres[], int tamanioAlquileres);
 void altaAlquiler(eJuego juegos[], int tamaniojuegos, eCliente clientes[], int tamanioClientes, eAlquiler alquileres[], int tamanioAlquileres);

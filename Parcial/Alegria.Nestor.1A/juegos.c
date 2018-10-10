@@ -345,7 +345,7 @@ void abmJuegos(eJuego juegos[], int tamanioJuegos)
         case 2:
             if(checkArrayJuegos == -1) //Si checkArray() es -1 aun no hay juegos cargados en el sistema y lo informa.
             {
-                printf("No hay empleados dados de alta en el sistema.\n\n");
+                printf("No hay juegos dados de alta en el sistema.\n\n");
             }
             else
             {
@@ -356,7 +356,7 @@ void abmJuegos(eJuego juegos[], int tamanioJuegos)
         case 3:
             if(checkArrayJuegos == -1) //Si checkArray() es -1 aun no hay juegos cargados en el sistema y lo informa.
             {
-                printf("No hay empleados dados de alta en el sistema.\n\n");
+                printf("No hay juegos dados de alta en el sistema.\n\n");
             }
             else
             {
@@ -367,7 +367,7 @@ void abmJuegos(eJuego juegos[], int tamanioJuegos)
         case 4:
             if(checkArrayJuegos == -1) //Si checkArray() es -1 aun no hay juegos cargados en el sistema y lo informa.
             {
-                printf("No hay empleados dados de alta en el sistema.\n\n");
+                printf("No hay juegos dados de alta en el sistema.\n\n");
             }
             else
             {

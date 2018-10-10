@@ -74,6 +74,20 @@ int iniciarEstadosAlquileres(eAlquiler alquileres [], int tamanioAlquileres)
 }
 
 
+int checkEmptyAlquileres(eAlquiler alquileres[], int tamanioAlquileres)
+{
+    int flag = -1;
+    for(int i=0; i<tamanioAlquileres; i++)
+    {
+        if(alquileres[i].isEmpty == ACTIVO)
+        {
+            flag = 0;
+            break;
+        }
+    }
+    return flag;
+}
+
 int buscarAlquilerLibre(eAlquiler alquileres[], int tamanioAlquileres)
 {
     int indice = -1;
@@ -244,9 +258,11 @@ void listarAlquileres(eJuego juegos[], int tamaniojuegos, eCliente clientes[], i
 
 void abmAlquiler(eJuego juegos[], int tamaniojuegos, eCliente clientes[], int tamanioClientes, eAlquiler alquileres[], int tamanioAlquileres)
 {
+    int checkArrayAlquileres;
     char seguir = 's'; //Bandera continuar do-while.
     do
     {
+        checkArrayAlquileres = checkEmptyAlquileres(alquileres, tamanioAlquileres);
         switch(menuABM("Alquileres"))
         {
         case 1:
@@ -254,14 +270,34 @@ void abmAlquiler(eJuego juegos[], int tamaniojuegos, eCliente clientes[], int ta
             system("pause");
             break;
         case 2:
-
+            if(checkArrayAlquileres == -1) //Si checkArrayAlquileres() es -1 aun no hay alquileres cargados en el sistema y lo informa.
+            {
+                printf("No hay alquileres dados de alta en el sistema.\n\n");
+            }
+            else
+            {
+            }
             system("pause");
             break;
         case 3:
+            if(checkArrayAlquileres == -1) //Si checkArrayAlquileres() es -1 aun no hay alquileres cargados en el sistema y lo informa.
+            {
+                printf("No hay alquileres dados de alta en el sistema.\n\n");
+            }
+            else
+            {
+            }
             system("pause");
             break;
         case 4:
-            listarAlquileres(juegos, tamaniojuegos, clientes, tamanioClientes, alquileres, tamanioAlquileres);
+            if(checkArrayAlquileres == -1) //Si checkArrayAlquileres() es -1 aun no hay juegos cargados en el sistema y lo informa.
+            {
+                printf("No hay alquileres dados de alta en el sistema.\n\n");
+            }
+            else
+            {
+                listarAlquileres(juegos, tamaniojuegos, clientes, tamanioClientes, alquileres, tamanioAlquileres);
+            }
             system("pause");
             break;
         case 5:
