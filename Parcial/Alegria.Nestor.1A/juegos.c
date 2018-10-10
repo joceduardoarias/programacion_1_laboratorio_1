@@ -16,18 +16,18 @@ int menu()
     printf(":::::::::::::::::::::::::::::::::::::::\n\n");
     printf("  1- ABM Juegos\n");
     printf("  2- ABM Clientes\n");
-    printf("  3- Alquileres\n");
+    printf("  3- ABM Alquileres\n");
     printf("  4- Salir\n");
     printf("\n:::::::::::::::::::::::::::::::::::::::\n\n");
     option = getInt("Ingrese opcion: ");
     return option;
 }
 
-int menuABM()
+int menuABM(char mensaje[])
 {
     int option;
     system("cls");
-    printf(" *** ABM ***\n\n");
+    printf(" *** ABM %s***\n\n", mensaje);
     printf(":::::::::::::::::::::::::::::::::::::::\n\n");
     printf("  1- Alta\n");
     printf("  2- Modificar\n");
@@ -120,6 +120,18 @@ int buscarJuego(eJuego juegos[], int tamanioJuegos, int idJuego)
     return indice;
 }
 
+
+void cargarDescripcion(eJuego juegos[], int tamanioJuegos, int idJuego, char cadena[])
+{
+    for(int i=0; i < tamanioJuegos; i++)
+    {
+        if( juegos[i].idJuego == idJuego)
+        {
+            strcpy(cadena, juegos[i].descripcion);
+            break;
+        }
+    }
+}
 void mostrarJuego(eJuego juegos)
 {
     printf("\t%2d  | %15s  |  %.2f  \n", juegos.idJuego, juegos.descripcion, juegos.importe);
@@ -128,7 +140,7 @@ void mostrarJuego(eJuego juegos)
 
 void mostrarJuegos(eJuego juegos[], int tamanioJuegos)
 {
-    printf("\n\tId  |     Descripcion  |  Importe\n\n");
+    printf("\tId  |     Descripcion  |  Importe\n\n");
     for(int i=0; i<tamanioJuegos; i++){
         if(juegos[i].isEmpty == ACTIVO){
         mostrarJuego(juegos[i]);
@@ -308,7 +320,7 @@ void abmJuegos(eJuego juegos[], int tamanioJuegos)
     char seguir = 's'; //Bandera continuar do-while.
     do
     {
-        switch(menuABM())
+        switch(menuABM("Juegos"))
         {
         case 1:
             altaJuego(juegos, tamanioJuegos);

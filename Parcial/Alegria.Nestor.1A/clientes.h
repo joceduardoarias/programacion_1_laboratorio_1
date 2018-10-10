@@ -17,6 +17,8 @@ int iniciarEstadosClientes(eCliente clientes [], int tamanioClientes);
 int getNextIdCliente(eCliente clientes[],int tamanioClientes);
 int buscarClienteLibre(eCliente clientes[], int tamanioClientes);
 int buscarCliente(eCliente clientes[], int tamanioClientes, int idCliente);
+void cargarNombre(eCliente clientes[], int tamanioClientes, int idCliente, char cadena[]);
+
 void mostrarCliente(eCliente clientes);
 void mostrarClientes(eCliente clientes[], int tamanioClientes);
 void altaClientes(eCliente clientes[], int tamanioClientes);

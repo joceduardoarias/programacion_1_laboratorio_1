@@ -95,6 +95,19 @@ int buscarCliente(eCliente clientes[], int tamanioClientes, int idCliente)
     return indice;
 }
 
+
+void cargarNombre(eCliente clientes[], int tamanioClientes, int idCliente, char cadena[])
+{
+    for(int i=0; i < tamanioClientes; i++)
+    {
+        if( clientes[i].idCliente == idCliente)
+        {
+            strcpy(cadena, clientes[i].nombre);
+            break;
+        }
+    }
+}
+
 void mostrarCliente(eCliente clientes)
 {
     printf("\t%2d  | %12s  | %12s  |   %c  |  %12s  \n", clientes.idCliente, clientes.apellido, clientes.nombre, clientes.sexo, clientes.domicilio);
@@ -321,7 +334,7 @@ void abmClientes(eCliente clientes[], int tamanioClientes)
     char seguir = 's'; //Bandera continuar do-while.
     do
     {
-        switch(menuABM())
+        switch(menuABM("Clientes"))
         {
         case 1:
             altaCliente(clientes, tamanioClientes);

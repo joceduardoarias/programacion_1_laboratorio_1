@@ -11,7 +11,7 @@ typedef struct
 } eJuego;
 
 int menu();
-int menuABM();
+int menuABM(char mensaje[]);
 void hardcodeoJuegos(eJuego juegos[]);
 int getNextId(eJuego juegos[],int tamanioJuegos);
 int iniciarEstadosJuegos(eJuego juegos [], int tamanioJuegos);
@@ -21,6 +21,7 @@ int buscarJuegoLibre(eJuego juegos[], int tamanioJuegos);
 int buscarJuego(eJuego juegos[], int tamanioJuegos, int idJuego);
 void altaJuego(eJuego juegos[], int tamaniojuegos);
 void modificarJuego(eJuego juegos[], int tamanioJuegos);
+void cargarDescripcion(eJuego juegos[], int tamanioJuegos, int idJuego, char cadena[]);
 void bajaJuego(eJuego juegos[], int tamaniojuegos);
 void listarJuegos(eJuego juegos[], int tamanioJuegos);
 void abmJuegos(eJuego juegos[], int tamanioJuegos);

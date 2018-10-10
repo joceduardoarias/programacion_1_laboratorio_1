@@ -9,6 +9,46 @@
 #define VACIO 1
 #define BAJA 2
 
+int idAlquiler;
+int codigoJuego;
+int codigoCliente;
+eFecha fechaAlquiler;
+int isEmpty;
+void hardcodeoAlquileres(eAlquiler alquileres[])
+{
+    alquileres[0].idAlquiler = 1;
+    alquileres[0].codigoJuego = 1;
+    alquileres[0].codigoCliente = 2;
+    alquileres[0].fechaAlquiler.dia = 10;
+    alquileres[0].fechaAlquiler.mes = 02;
+    alquileres[0].fechaAlquiler.anio = 2017;
+    alquileres[0].isEmpty = ACTIVO;
+
+    alquileres[1].idAlquiler = 2;
+    alquileres[1].codigoJuego = 3;
+    alquileres[1].codigoCliente = 4;
+    alquileres[1].fechaAlquiler.dia = 01;
+    alquileres[1].fechaAlquiler.mes = 05;
+    alquileres[1].fechaAlquiler.anio = 2017;
+    alquileres[1].isEmpty = ACTIVO;
+
+    alquileres[2].idAlquiler = 3;
+    alquileres[2].codigoJuego = 4;
+    alquileres[2].codigoCliente = 2;
+    alquileres[2].fechaAlquiler.dia = 22;
+    alquileres[2].fechaAlquiler.mes = 05;
+    alquileres[2].fechaAlquiler.anio = 2017;
+    alquileres[2].isEmpty = ACTIVO;
+
+    alquileres[3].idAlquiler = 4;
+    alquileres[3].codigoJuego = 2;
+    alquileres[3].codigoCliente = 2;
+    alquileres[3].fechaAlquiler.dia = 05;
+    alquileres[3].fechaAlquiler.mes = 10;
+    alquileres[3].fechaAlquiler.anio = 2017;
+    alquileres[3].isEmpty = ACTIVO;
+}
+
 int getNextIdAlquiler(eAlquiler alquileres[],int tamanioAlquiler)
 {
     int flag = 0;
@@ -64,7 +104,7 @@ int buscarAlquiler(eAlquiler alquileres[], int tamanioAlquileres, int idAlquiler
     return indice;
 }
 
-void abmAlquiler(eJuego juegos[], int tamaniojuegos, eCliente clientes[], int tamanioClientes, eAlquiler alquileres[], int tamanioAlquileres)
+void altaAlquiler(eJuego juegos[], int tamaniojuegos, eCliente clientes[], int tamanioClientes, eAlquiler alquileres[], int tamanioAlquileres)
 {
     eAlquiler alquilerAux;
     int indice;
@@ -95,18 +135,22 @@ void abmAlquiler(eJuego juegos[], int tamaniojuegos, eCliente clientes[], int ta
     else
     {
         idAux = getNextIdAlquiler(alquileres, tamanioAlquileres);
-        if(juegosActivo != 0){
+        if(juegosActivo != 0)
+        {
             mostrarJuegos(juegos, tamaniojuegos);
             idJuegoAux = getValidIntRango("\nIngrese juego a alquilar: ", "Error de ingreso. Reintente.\n\n", 1, juegosActivo);
         }
-        else{
+        else
+        {
             printf("\nAun no se han cargado juegos.\n\n");
         }
-        if(clientesActivo != 0){
+        if(clientesActivo != 0)
+        {
             mostrarClientes(clientes, tamanioClientes);
             idClienteAux = getValidIntRango("\nIngrese cliente: ", "Error de ingreso. Reintente.\n\n", 1, clientesActivo);
         }
-        else{
+        else
+        {
             printf("\nAun no se han cargado clientes.\n\n");
         }
         diaAux = getValidIntRango("Ingrese dia de alquiler: ", "Error de ingreso, reintente.\n\n", 1, 31);
@@ -159,27 +203,73 @@ int clientesActivos(eCliente clientes[], int tamanioClientes)
     return clientesActivos;
 }
 
-
-void cargarNombre(eCliente clientes[], int tamanioClientes, int idCliente, char cadena[])
+void mostrarAlquileres(eJuego juegos[], int tamaniojuegos, eCliente clientes[], int tamanioClientes, eAlquiler alquileres[], int tamanioAlquileres)
 {
-    for(int i=0; i < tamanioClientes; i++)
+    char descripcionJuego[20];
+    char nombreCliente[51];
+    printf("\tID Alquiler  | Nombre Cliente |      Juego    |  Fecha de alquiler\n\n");
+    for(int i = 0; i< tamanioAlquileres; i++)
     {
-        if( clientes[i].idCliente == idCliente)
+        if(alquileres[i].isEmpty == ACTIVO)
         {
-            strcpy(cadena, clientes[i].nombre);
-            break;
+            for(int j = 0; j<tamanioClientes; j++)
+            {
+                if(alquileres[i].codigoCliente == clientes[j].idCliente)
+                {
+                    strcpy(nombreCliente, clientes[j].nombre);
+                    break;
+                }
+            }
+            for(int k = 0; k<tamaniojuegos; k++)
+            {
+                if(alquileres[i].codigoJuego == juegos[k].idJuego)
+                {
+                    strcpy(descripcionJuego, juegos[k].descripcion);
+                    break;
+                }
+            }
+            printf("\t\t%02d   | %13s  |   %10s  |    %02d-%02d-%4d\n", alquileres[i].idAlquiler, nombreCliente, descripcionJuego, alquileres[i].fechaAlquiler.dia, alquileres[i].fechaAlquiler.mes, alquileres[i].fechaAlquiler.anio);
         }
     }
+    printf("\n");
 }
 
-void cargarDescripcion(eJuego juegos[], int tamanioJuegos, int idJuego, char cadena[])
+void listarAlquileres(eJuego juegos[], int tamaniojuegos, eCliente clientes[], int tamanioClientes, eAlquiler alquileres[], int tamanioAlquileres)
 {
-    for(int i=0; i < tamanioJuegos; i++)
+    system("cls");
+    printf(" *** LISTAR ALQUILERES ***\n\n");
+    mostrarAlquileres(juegos, tamaniojuegos, clientes, tamanioClientes, alquileres, tamanioAlquileres);
+}
+
+
+void abmAlquiler(eJuego juegos[], int tamaniojuegos, eCliente clientes[], int tamanioClientes, eAlquiler alquileres[], int tamanioAlquileres)
+{
+    char seguir = 's'; //Bandera continuar do-while.
+    do
     {
-        if( juegos[i].idJuego == idJuego)
+        switch(menuABM("Alquileres"))
         {
-            strcpy(cadena, juegos[i].descripcion);
+        case 1:
+            altaAlquiler(juegos, tamaniojuegos, clientes, tamanioClientes, alquileres, tamanioAlquileres);
+            system("pause");
             break;
+        case 2:
+
+            system("pause");
+            break;
+        case 3:
+            system("pause");
+            break;
+        case 4:
+            listarAlquileres(juegos, tamaniojuegos, clientes, tamanioClientes, alquileres, tamanioAlquileres);
+            system("pause");
+            break;
+        case 5:
+            seguir = 'n';
+            break;
+        default:
+            printf("Error, ingreso una opcion no valida. Reintente.\n\n");
         }
     }
+    while(seguir == 's');
 }

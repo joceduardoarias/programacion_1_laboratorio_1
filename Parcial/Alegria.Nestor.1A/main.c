@@ -22,7 +22,8 @@ int main()
     iniciarEstadosAlquileres(alquileres, TAM_ALQUILERES); //Inicializo los estados en VACIO.
 
     hardcodeoJuegos(juegos); //Harcodea datos de 4 juegos.
-    hardcodeoClientes(clientes); //Harcodea datos de 4 juegos.
+    hardcodeoClientes(clientes); //Harcodea datos de 4 clientes.
+    hardcodeoAlquileres(alquileres); //Harcodea datos de 4 alquileres.
 
     do
     {
