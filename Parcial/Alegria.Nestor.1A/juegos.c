@@ -16,18 +16,18 @@ int menu()
     printf(":::::::::::::::::::::::::::::::::::::::\n\n");
     printf("  1- ABM Juegos\n");
     printf("  2- ABM Clientes\n");
-    printf("  3- Alquileres\n");
+    printf("  3- ABM Alquileres\n");
     printf("  4- Salir\n");
     printf("\n:::::::::::::::::::::::::::::::::::::::\n\n");
     option = getInt("Ingrese opcion: ");
     return option;
 }
 
-int menuABM()
+int menuABM(char mensaje[])
 {
     int option;
     system("cls");
-    printf(" *** ABM ***\n\n");
+    printf(" *** ABM %s***\n\n", mensaje);
     printf(":::::::::::::::::::::::::::::::::::::::\n\n");
     printf("  1- Alta\n");
     printf("  2- Modificar\n");
@@ -63,6 +63,20 @@ void hardcodeoJuegos(eJuego juegos[])
     juegos[3].isEmpty = ACTIVO;
 }
 
+int checkEmptyJuegos(eJuego juegos[], int tamanioJuegos)
+{
+    int flag = -1;
+    for(int i=0; i<tamanioJuegos; i++)
+    {
+        if(juegos[i].isEmpty == ACTIVO)
+        {
+            flag = 0;
+            break;
+        }
+    }
+    return flag;
+}
+
 int getNextId(eJuego juegos[],int tamanioJuegos)
 {
     int flag = 0;
@@ -77,14 +91,26 @@ int getNextId(eJuego juegos[],int tamanioJuegos)
     return flag+1;
 }
 
-int iniciarEstadosJuegos(eJuego juegos [], int tamanioJuegos)
+int juegosActivos(eJuego juegos[], int tamanioJuegos)
 {
-    int flag = -1;
+    int juegoActivo = 0;
+    for(int i=0; i<tamanioJuegos; i++)
+    {
+        if(juegos[i].isEmpty == ACTIVO)
+        {
+            juegoActivo++;
+        }
+    }
+    return juegoActivo;
+}
+
+
+void iniciarEstadosJuegos(eJuego juegos [], int tamanioJuegos)
+{
     for(int i=0; i<tamanioJuegos; i++)
     {
         juegos[i].isEmpty = VACIO;
     }
-    return flag;
 }
 
 
@@ -120,6 +146,18 @@ int buscarJuego(eJuego juegos[], int tamanioJuegos, int idJuego)
     return indice;
 }
 
+
+void cargarDescripcion(eJuego juegos[], int tamanioJuegos, int idJuego, char cadena[])
+{
+    for(int i=0; i < tamanioJuegos; i++)
+    {
+        if( juegos[i].idJuego == idJuego)
+        {
+            strcpy(cadena, juegos[i].descripcion);
+            break;
+        }
+    }
+}
 void mostrarJuego(eJuego juegos)
 {
     printf("\t%2d  | %15s  |  %.2f  \n", juegos.idJuego, juegos.descripcion, juegos.importe);
@@ -128,7 +166,7 @@ void mostrarJuego(eJuego juegos)
 
 void mostrarJuegos(eJuego juegos[], int tamanioJuegos)
 {
-    printf("\n\tId  |     Descripcion  |  Importe\n\n");
+    printf("\tId  |     Descripcion  |  Importe\n\n");
     for(int i=0; i<tamanioJuegos; i++){
         if(juegos[i].isEmpty == ACTIVO){
         mostrarJuego(juegos[i]);
@@ -158,8 +196,8 @@ void altaJuego(eJuego juegos[], int tamaniojuegos)
         printf("Id aux: %d", idAux);
         printf("\nIndice : %d\n\n", indice);
 
-        getValidStringRango("Ingrese descripcion: ", "Error, solo se admiten letras. Reintente.\n\n", descripcionAux, 51);
-        importeAux = getValidFloatMayor0("Ingrese importe: ", "Error solo se admiten numeros. Reintente.\n\n");
+        getValidStringRango("Ingrese descripcion: ", "Error, solo se admiten letras. Reintente.\n", descripcionAux, 51);
+        importeAux = getValidFloatMayor0("Ingrese importe: ", "Error solo se admiten numeros. Reintente.\n");
 
         nuevoJuego.idJuego = idAux;
         nuevoJuego.isEmpty = ACTIVO;
@@ -186,7 +224,7 @@ void modificarJuego(eJuego juegos[], int tamanioJuegos)
 
     system("cls");
     printf("  *** Modificar Juego ***\n\n");
-    idJuego = getValidInt("Ingrese el ID del juego: ", "Error, solo se admiten numeros. Reintente.\n\n");
+    idJuego = getValidInt("Ingrese el ID del juego: ", "Error, solo se admiten numeros. Reintente.\n");
     indice = buscarJuego(juegos, tamanioJuegos, idJuego);
     if( indice == -1)
     {
@@ -203,7 +241,7 @@ void modificarJuego(eJuego juegos[], int tamanioJuegos)
         case 1:
             printf("\nModificar descripcion -->\n\n");
             getValidStringRango("Ingrese nueva descripcion: ", "Error, solo se admiten letras.\n", descripcionAux, 51);
-            printf("\nSe modificara \"%s\" por \"%s\"", juegos[indice].descripcion, descripcionAux);
+            printf("\nSe modificara \"%s\" por \"%s\"", descripcionAux, juegos[indice].descripcion);
             confirmacion = getValidChar("\nConfirma cambio (s/n)?: ", "Error al ingresar opcion. Reintente.\n\n", 's', 'n');
             if(confirmacion == 'n')
             {
@@ -217,8 +255,8 @@ void modificarJuego(eJuego juegos[], int tamanioJuegos)
             break;
         case 2:
             printf("\nModificar importe -->\n\n");
-            importeAux = getValidFloatMayor0("Ingrese importe: ", "Error solo se admiten numeros. Reintente.\n\n");
-            printf("\nSe modificara \"%.2f\" por \"%.2f\"", juegos[indice].importe, importeAux);
+            importeAux = getValidFloatMayor0("Ingrese importe: ", "Error solo se admiten numeros. Reintente.\n");
+            printf("\nSe modificara \"%.2f\" por \"%.2f\"", importeAux, juegos[indice].importe);
             confirmacion = getValidChar("\nConfirma cambio (s/n)?: ", "Error al ingresar opcion. Reintente.\n\n", 's', 'n');
             if(confirmacion == 'n')
             {
@@ -305,25 +343,48 @@ void listarJuegos(eJuego juegos[], int tamanioJuegos)
 
 void abmJuegos(eJuego juegos[], int tamanioJuegos)
 {
+    int checkArrayJuegos;
     char seguir = 's'; //Bandera continuar do-while.
     do
     {
-        switch(menuABM())
+        checkArrayJuegos = checkEmptyJuegos(juegos, tamanioJuegos);
+        switch(menuABM("Juegos"))
         {
         case 1:
             altaJuego(juegos, tamanioJuegos);
             system("pause");
             break;
         case 2:
-            modificarJuego(juegos, tamanioJuegos);
+            if(checkArrayJuegos == -1) //Si checkArray() es -1 aun no hay juegos cargados en el sistema y lo informa.
+            {
+                printf("No hay juegos dados de alta en el sistema.\n\n");
+            }
+            else
+            {
+                modificarJuego(juegos, tamanioJuegos);
+            }
             system("pause");
             break;
         case 3:
-            bajaJuego(juegos, tamanioJuegos);
+            if(checkArrayJuegos == -1) //Si checkArray() es -1 aun no hay juegos cargados en el sistema y lo informa.
+            {
+                printf("No hay juegos dados de alta en el sistema.\n\n");
+            }
+            else
+            {
+                bajaJuego(juegos, tamanioJuegos);
+            }
             system("pause");
             break;
         case 4:
-            listarJuegos(juegos, tamanioJuegos);
+            if(checkArrayJuegos == -1) //Si checkArray() es -1 aun no hay juegos cargados en el sistema y lo informa.
+            {
+                printf("No hay juegos dados de alta en el sistema.\n\n");
+            }
+            else
+            {
+                listarJuegos(juegos, tamanioJuegos);
+            }
             system("pause");
             break;
         case 5:

@@ -63,14 +63,27 @@ int iniciarEstadosClientes(eCliente clientes [], int tamanioClientes)
     return flag;
 }
 
+int checkEmptyClientes(eCliente clientes[], int tamanioClientes)
+{
+    int flag = -1;
+    for(int i=0; i<tamanioClientes; i++)
+    {
+        if(clientes[i].isEmpty == ACTIVO)
+        {
+            flag = 0;
+            break;
+        }
+    }
+    return flag;
+}
+
 int buscarClienteLibre(eCliente clientes[], int tamanioClientes)
 {
     int indice = -1;
 
     for(int i=0; i< tamanioClientes; i++)
     {
-
-        if( clientes[i].isEmpty == VACIO)
+        if(clientes[i].isEmpty == VACIO)
         {
             indice = i;
             break;
@@ -95,6 +108,19 @@ int buscarCliente(eCliente clientes[], int tamanioClientes, int idCliente)
     return indice;
 }
 
+
+void cargarNombre(eCliente clientes[], int tamanioClientes, int idCliente, char cadena[])
+{
+    for(int i=0; i < tamanioClientes; i++)
+    {
+        if( clientes[i].idCliente == idCliente)
+        {
+            strcpy(cadena, clientes[i].nombre);
+            break;
+        }
+    }
+}
+
 void mostrarCliente(eCliente clientes)
 {
     printf("\t%2d  | %12s  | %12s  |   %c  |  %12s  \n", clientes.idCliente, clientes.apellido, clientes.nombre, clientes.sexo, clientes.domicilio);
@@ -102,7 +128,7 @@ void mostrarCliente(eCliente clientes)
 
 void mostrarClientes(eCliente clientes[], int tamanioClientes)
 {
-    printf("\n\t Id |      Apellido |        Nombre | Sexo |     Direccion\n\n");
+    printf("\t Id |      Apellido |        Nombre | Sexo |     Direccion\n\n");
     for(int i=0; i<tamanioClientes; i++)
     {
         if(clientes[i].isEmpty == ACTIVO)
@@ -110,6 +136,19 @@ void mostrarClientes(eCliente clientes[], int tamanioClientes)
             mostrarCliente(clientes[i]);
         }
     }
+}
+
+int clientesActivos(eCliente clientes[], int tamanioClientes)
+{
+    int clientesActivos=0;
+    for(int i=0; i<tamanioClientes; i++)
+    {
+        if(clientes[i].isEmpty == ACTIVO)
+        {
+            clientesActivos++;
+        }
+    }
+    return clientesActivos;
 }
 
 void altaCliente(eCliente clientes[], int tamanioClientes)
@@ -148,9 +187,10 @@ void altaCliente(eCliente clientes[], int tamanioClientes)
         strcpy(nuevoCliente.nombre, nombreAux);
         nuevoCliente.sexo = sexoAux;
         strcpy(nuevoCliente.domicilio, direccionAux);
+        nuevoCliente.isEmpty = ACTIVO;
 
         clientes[indice] = nuevoCliente;
-        printf("\nSe agrego nuevo juego:\n\n");
+        printf("\nSe agrego nuevo cliente:\n\n");
         printf("\n\t Id |      Apellido |        Nombre | Sexo |     Direccion\n\n");
         mostrarCliente(clientes[indice]);
         printf("\n");
@@ -318,25 +358,48 @@ void listarClientes(eCliente clientes[], int tamanioClientes)
 
 void abmClientes(eCliente clientes[], int tamanioClientes)
 {
+    int checkArrayClientes;
     char seguir = 's'; //Bandera continuar do-while.
     do
     {
-        switch(menuABM())
+        checkArrayClientes = checkEmptyClientes(clientes, tamanioClientes);
+        switch(menuABM("Clientes"))
         {
         case 1:
             altaCliente(clientes, tamanioClientes);
             system("pause");
             break;
         case 2:
-            modificarCliente(clientes, tamanioClientes);
+            if(checkArrayClientes == -1) //Si checkArrayClientes() es -1 aun no hay clientes cargados en el sistema y lo informa.
+            {
+                printf("No hay clientes dados de alta en el sistema.\n\n");
+            }
+            else
+            {
+                modificarCliente(clientes, tamanioClientes);
+            }
             system("pause");
             break;
         case 3:
-            bajaCliente(clientes, tamanioClientes);
+            if(checkArrayClientes == -1) //Si checkArrayClientes() es -1 aun no hay clientes cargados en el sistema y lo informa.
+            {
+                printf("No hay clientes dados de alta en el sistema.\n\n");
+            }
+            else
+            {
+                bajaCliente(clientes, tamanioClientes);
+            }
             system("pause");
             break;
         case 4:
-            listarClientes(clientes, tamanioClientes);
+            if(checkArrayClientes == -1) //Si checkArrayClientes() es -1 aun no hay clientes cargados en el sistema y lo informa.
+            {
+                printf("No hay clientes dados de alta en el sistema.\n\n");
+            }
+            else
+            {
+                listarClientes(clientes, tamanioClientes);
+            }
             system("pause");
             break;
         case 5:
