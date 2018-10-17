@@ -80,15 +80,17 @@ int main()
     int j=5;
     int *punteroInt;
     int **punteroPuntero;
+
     punteroInt = &j; // Obtenemos la posición de memoria
     punteroPuntero = &punteroInt; // Obtenemos la posición de memoria
+
     printf("Direccion de memoria j: %p", &j);
     printf("\nDato de j: %d", j);
 
     printf("\n\nDireccion de memoria punteroInt: %p", punteroInt);
     printf("\nDato de punteroInt: %d", *punteroInt);
 
-    printf("\n\nDireccion de memoria punteroPuntero: %p", punteroPuntero);
+    printf("\n\nDireccion de memoria punteroPuntero: %p", *punteroPuntero);
     printf("\nDato de punteroPuntero: %d", *punteroPuntero);
     printf("\n<------------------");
 
