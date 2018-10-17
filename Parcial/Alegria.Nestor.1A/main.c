@@ -51,10 +51,6 @@ int main()
         default:
             printf("Error, ingreso una opcion no valida. Reintente.\n\n");
         }
-
-
-
-
     }
     while(seguir == 's');
     return 0;
