@@ -42,6 +42,10 @@ int main()
             system("pause");
             break;
         case 4:
+            abmInformes(juegos, TAM_JUEGOS, clientes, TAM_CLIENTES, alquileres, TAM_ALQUILERES);
+            system("pause");
+            break;
+        case 5:
             seguir = 'n';
             break;
         default:

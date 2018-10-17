@@ -18,7 +18,7 @@ int menuInformes()
     printf(":::::::::::::::::::::::::::::::::::::::\n\n");
     printf("  1- Promedio y total de los Importes de los juegos alquilados.\n");
     printf("  2- Cantidad de juegos cuyo importe NO supera el promedio del item anterior.\n");
-    printf("  3- Listar todos los clientes que alquilaron un juego determinado.\n");
+    printf("  3- \n");
     printf("  4- \n");
     printf("  5- \n");
     printf("  6- \n");
@@ -48,11 +48,9 @@ void abmInformes(eJuego juegos[], int tamaniojuegos, eCliente clientes[], int ta
             system("pause");
             break;
         case 3:
-            //listarClientesAlquilaronUnJuego(juegos, tamaniojuegos, clientes, tamanioClientes, alquileres, tamanioAlquileres);
             system("pause");
             break;
         case 4:
-
             system("pause");
             break;
 
@@ -139,44 +137,6 @@ void cantidadJuegosNoSuperanPromedio(eJuego juegos[], int tamanioJuegos)
     printf("Existen %d juegos cuyos importes no superan el promedio.\n\n", totalNoSuperanPromedio);
 }
 
-/*void listarClientesAlquilaronUnJuego(eJuego juegos[], int tamaniojuegos, eCliente clientes[], int tamanioClientes, eAlquiler alquileres[], int tamanioAlquileres)
-{
-    int idJuego;
-    int indiceJuego;
-    char descripcion[51];
-    char nombre[51];
-    char apellido[51];
-    int flag = 0;
-
-    system("cls");
-    printf(" Listar todos los clientes que alquilaron un juego determinado.\n\n");
-    idJuego = elegirJuego(juegos, tamaniojuegos);
-    indiceJuego = buscarJuego(juegos, tamaniojuegos, idJuego);
-    cargarDescripcion(juegos, tamaniojuegos, juegos[indiceJuego].idJuego, descripcion);
-
-    system("cls");
-    printf(" Clientes que alquilaron el juego %d %s\n\n", idJuego, descripcion);
-    for(int i=0; i< tamanioAlquileres; i++)
-    {
-        if(alquileres[i].isEmpty == ACTIVO && alquileres[i].codigoJuego == idJuego)
-        {
-            for(int j=0; j<tamanioClientes; j++){
-                if(alquileres[i].codigoCliente == clientes[j].idCliente){
-                    printf(" %d   |   %s  ", alquileres[i].idAlquiler, clientes[i].nombre);
-                    flag = 1;
-                }
-            }
-
-
-        }
-    }
-    if(flag == 0)
-    {
-        printf("No hay clientes que mostrar\n\n");
-    }
-
-}*/
-
 
 int elegirCliente(eCliente clientes[], int tamanioClientes)
 {
@@ -185,7 +145,8 @@ int elegirCliente(eCliente clientes[], int tamanioClientes)
     printf("\t Id |      Apellido |        Nombre | Sexo |     Direccion\n\n");
     for(int i=0; i < tamanioClientes; i++)
     {
-        if(clientes[i].isEmpty == ACTIVO){
+        if(clientes[i].isEmpty == ACTIVO)
+        {
             mostrarCliente(clientes[i]);
         }
     }
@@ -200,7 +161,8 @@ int elegirJuego(eJuego juegos[], int tamanioJuegos)
     printf("\tId  |     Descripcion  |  Importe\n\n");
     for(int i=0; i < tamanioJuegos; i++)
     {
-        if(juegos[i].isEmpty == ACTIVO){
+        if(juegos[i].isEmpty == ACTIVO)
+        {
             mostrarJuego(juegos[i]);
         }
     }
@@ -209,7 +171,8 @@ int elegirJuego(eJuego juegos[], int tamanioJuegos)
 }
 
 
-void listarJuegosImporte(eJuego juegos[], int tamanioJuegos){
+void listarJuegosImporte(eJuego juegos[], int tamanioJuegos)
+{
     eJuego juegoAux;
     system("cls");
     printf(" Listar todos los juegos ordenados por Importe (descendente).\n\n");
@@ -229,9 +192,31 @@ void listarJuegosImporte(eJuego juegos[], int tamanioJuegos){
     printf("\n");
 }
 
+void ordenacion_insercion (eCliente clientes[], int N)
+{
+    int p, j;
+    eCliente tmp;
+    for (p = 1; p < N; p++)
+    {
+        tmp = clientes[p];
+        j = p - 1;
+        while ((j >= 0) && (strcmp(tmp.apellido, clientes[j].apellido) < 0))
+        {
+            clientes[j + 1] = clientes[j];
+            j--;
+        }
+        clientes[j + 1] = tmp;
+    }
+}
+
+
+
 void listarClientesApellidos(eCliente clientes[], int tamanioClientes)
 {
     system("cls");
     printf(" Listar todos los clientes ordenados por Apellido (ascendente). Metodo Insercion.\n\n");
-
+    ordenacion_insercion(clientes, tamanioClientes);
+    mostrarClientes(clientes, tamanioClientes);
+    printf("\n");
 }
+

@@ -18,6 +18,7 @@ int elegirJuego(eJuego juegos[], int tamanioJuegos);
 
 void listarJuegosImporte(eJuego juegos[], int tamaniojuegos);
 void listarClientesApellidos(eCliente clientes[], int tamanioClientes);
+void listarJuegosAlquiladosPorCliente(eJuego juegos[], int tamaniojuegos, eCliente clientes[], int tamanioClientes, eAlquiler alquileres[], int tamanioAlquileres);
 
 
 

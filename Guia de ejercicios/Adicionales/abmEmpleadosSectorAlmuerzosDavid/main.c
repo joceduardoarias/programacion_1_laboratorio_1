@@ -74,7 +74,8 @@ int main()
             system("pause");
             break;
         case 2:
-
+            listarEmpleadosXSector(empleados, LEN_EMPLEADOS, sectores, 5);
+            system("pause");
             break;
         case 3:
 

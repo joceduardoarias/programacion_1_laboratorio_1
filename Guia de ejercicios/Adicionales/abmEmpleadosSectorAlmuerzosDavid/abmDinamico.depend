@@ -107,3 +107,88 @@
 
 1538572494 d:\cosas\nestor_a\programacion_1_laboratorio_1\guia de ejercicios\adicionales\abmempleadossectoralmuerzosdavid\fecha.h
 
+1538998100 source:d:\n_alegria\programacion_1_laboratorio_1\guia de ejercicios\adicionales\abmempleadossectoralmuerzosdavid\almuerzo.c
+	<stdio.h>
+	<stdlib.h>
+	"empleado.h"
+	"sector.h"
+	"almuerzo.h"
+	"utn.h"
+
+1538998100 d:\n_alegria\programacion_1_laboratorio_1\guia de ejercicios\adicionales\abmempleadossectoralmuerzosdavid\empleado.h
+	"empleado.h"
+	"sector.h"
+	"comida.h"
+	"almuerzo.h"
+	"fecha.h"
+	"utn.h"
+
+1538998100 d:\n_alegria\programacion_1_laboratorio_1\guia de ejercicios\adicionales\abmempleadossectoralmuerzosdavid\sector.h
+	"empleado.h"
+	"sector.h"
+	"comida.h"
+	"almuerzo.h"
+	"utn.h"
+
+1538998100 d:\n_alegria\programacion_1_laboratorio_1\guia de ejercicios\adicionales\abmempleadossectoralmuerzosdavid\comida.h
+	"empleado.h"
+	"sector.h"
+	"comida.h"
+	"almuerzo.h"
+	"utn.h"
+
+1538998100 d:\n_alegria\programacion_1_laboratorio_1\guia de ejercicios\adicionales\abmempleadossectoralmuerzosdavid\almuerzo.h
+	"empleado.h"
+	"sector.h"
+	"comida.h"
+	"almuerzo.h"
+	"fecha.h"
+	"utn.h"
+
+1538998100 d:\n_alegria\programacion_1_laboratorio_1\guia de ejercicios\adicionales\abmempleadossectoralmuerzosdavid\fecha.h
+
+1538998100 d:\n_alegria\programacion_1_laboratorio_1\guia de ejercicios\adicionales\abmempleadossectoralmuerzosdavid\utn.h
+
+1538998100 source:d:\n_alegria\programacion_1_laboratorio_1\guia de ejercicios\adicionales\abmempleadossectoralmuerzosdavid\comida.c
+	<stdio.h>
+	<stdlib.h>
+	"empleado.h"
+	"sector.h"
+	"almuerzo.h"
+	"utn.h"
+
+1538998100 source:d:\n_alegria\programacion_1_laboratorio_1\guia de ejercicios\adicionales\abmempleadossectoralmuerzosdavid\empleado.c
+	<stdio.h>
+	<stdlib.h>
+	"empleado.h"
+	"sector.h"
+	"utn.h"
+
+1538998100 source:d:\n_alegria\programacion_1_laboratorio_1\guia de ejercicios\adicionales\abmempleadossectoralmuerzosdavid\fecha.c
+
+1539181480 source:d:\n_alegria\programacion_1_laboratorio_1\guia de ejercicios\adicionales\abmempleadossectoralmuerzosdavid\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	"empleado.h"
+	"sector.h"
+	"comida.h"
+	"almuerzo.h"
+	"utn.h"
+
+1538998100 source:d:\n_alegria\programacion_1_laboratorio_1\guia de ejercicios\adicionales\abmempleadossectoralmuerzosdavid\sector.c
+	<stdio.h>
+	<stdlib.h>
+	"empleado.h"
+	"sector.h"
+	"almuerzo.h"
+	"utn.h"
+
+1538998100 source:d:\n_alegria\programacion_1_laboratorio_1\guia de ejercicios\adicionales\abmempleadossectoralmuerzosdavid\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	<ctype.h>
+

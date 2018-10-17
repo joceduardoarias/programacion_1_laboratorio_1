@@ -42,7 +42,7 @@ void hardcodeoAlquileres(eAlquiler alquileres[])
 
     alquileres[3].idAlquiler = 4;
     alquileres[3].codigoJuego = 2;
-    alquileres[3].codigoCliente = 2;
+    alquileres[3].codigoCliente = 3;
     alquileres[3].fechaAlquiler.dia = 05;
     alquileres[3].fechaAlquiler.mes = 10;
     alquileres[3].fechaAlquiler.anio = 2017;

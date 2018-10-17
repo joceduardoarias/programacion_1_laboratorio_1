@@ -17,7 +17,8 @@ int menu()
     printf("  1- ABM Juegos\n");
     printf("  2- ABM Clientes\n");
     printf("  3- ABM Alquileres\n");
-    printf("  4- Salir\n");
+    printf("  4- Informes\n");
+    printf("  5- Salir\n");
     printf("\n:::::::::::::::::::::::::::::::::::::::\n\n");
     option = getInt("Ingrese opcion: ");
     return option;
