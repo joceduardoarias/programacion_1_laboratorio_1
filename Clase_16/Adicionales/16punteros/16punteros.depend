@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1539183759 source:c:\users\alumno\desktop\16punteros\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	"utn.h"
+
+1539183759 c:\users\alumno\desktop\16punteros\utn.h
+
+1540215721 source:c:\users\alumno\desktop\16punteros\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
