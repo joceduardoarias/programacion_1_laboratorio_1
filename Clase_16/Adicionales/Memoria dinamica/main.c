@@ -13,12 +13,17 @@ typedef struct
 int cargarPendrive(ePendrive* pen);
 void mostrarPendrive(ePendrive* pen);
 ePendrive* new_Pendrive();
+ePendrive* new_PendriveParam(int codigo, char marca[],  int capacidad, float precio);
 
 int main()
 {
 
     ePendrive* miPendrive = new_Pendrive();
+    ePendrive* penParametro = new_PendriveParam(2, "Sorny", 32, 200.3);
+    ePendrive* penParametro1 = new_PendriveParam(5, "Zanio", 8, 75.3);
     mostrarPendrive(miPendrive);
+    mostrarPendrive(penParametro);
+    mostrarPendrive(penParametro1);
 
     return 0;
 }
@@ -61,6 +66,19 @@ ePendrive* new_Pendrive()
         strcpy(nuevoPendrive->marca, "");
         nuevoPendrive->capacidad = 0;
         nuevoPendrive->precio = 0;
+    }
+    return nuevoPendrive;
+}
+
+ePendrive* new_PendriveParam(int codigo, char marca[],  int capacidad, float precio){
+    ePendrive* nuevoPendrive;
+    nuevoPendrive = (ePendrive*) malloc(sizeof(ePendrive));
+    if(nuevoPendrive != NULL)
+    {
+        nuevoPendrive->codigo = codigo;
+        strcpy(nuevoPendrive->marca, marca);
+        nuevoPendrive->capacidad = capacidad;
+        nuevoPendrive->precio = precio;
     }
     return nuevoPendrive;
 }
