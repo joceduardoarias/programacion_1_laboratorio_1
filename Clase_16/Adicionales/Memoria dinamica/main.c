@@ -19,8 +19,6 @@ int main()
 
     ePendrive* miPendrive = new_Pendrive();
     mostrarPendrive(miPendrive);
-    cargarPendrive(miPendrive);
-    mostrarPendrive(miPendrive);
 
     return 0;
 }
