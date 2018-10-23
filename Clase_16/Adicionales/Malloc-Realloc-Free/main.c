@@ -41,6 +41,7 @@ int main()
     }
     else{
         printf("No hay mas lugar en memoria.\n");
+
     }
     printf("\n\n");
 
