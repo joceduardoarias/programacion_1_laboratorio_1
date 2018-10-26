@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1540214683 source:d:\ariasjose\puntero_estructura\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+

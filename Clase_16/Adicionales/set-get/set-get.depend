@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1527349372 source:d:\sabado\set-get\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"set-get.h"
+
+1527349362 d:\sabado\set-get\set-get.h
+
+1527349396 source:d:\sabado\set-get\set-get.c
+	"set-get.h"
+	<stdio.h>
+	<string.h>
+
