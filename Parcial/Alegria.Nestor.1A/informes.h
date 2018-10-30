@@ -12,21 +12,13 @@ int juegosNoSuperanPromedio(eJuego juegos[], int tamanioJuegos, int promedio);
 void cantidadJuegosNoSuperanPromedio(eJuego juegos[], int tamanioJuegos);
 //Fin punto 1 y dos
 
-<<<<<<< HEAD
-void listarClientesAlquilaronUnJuego(eJuego juegos[], int tamaniojuegos, eCliente clientes[], int tamanioClientes, eAlquiler alquileres[], int tamanioAlquileres);
-=======
 void listarClientesPorJuego(eJuego juegos[], int tamaniojuegos, eCliente clientes[], int tamanioClientes, eAlquiler alquileres[], int tamanioAlquileres);
 void listarJuegosPorCliente(eJuego juegos[], int tamaniojuegos, eCliente clientes[], int tamanioClientes, eAlquiler alquileres[], int tamanioAlquileres);
->>>>>>> refs/remotes/origin/master
 int elegirCliente(eCliente clientes[], int tamanioClientes);
 int elegirJuego(eJuego juegos[], int tamanioJuegos);
 
 void listarJuegosImporte(eJuego juegos[], int tamaniojuegos);
 void listarClientesApellidos(eCliente clientes[], int tamanioClientes);
-<<<<<<< HEAD
-void listarJuegosAlquiladosPorCliente(eJuego juegos[], int tamaniojuegos, eCliente clientes[], int tamanioClientes, eAlquiler alquileres[], int tamanioAlquileres);
-=======
->>>>>>> refs/remotes/origin/master
 
 
 

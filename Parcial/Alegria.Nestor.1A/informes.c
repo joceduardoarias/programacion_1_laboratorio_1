@@ -18,23 +18,14 @@ int menuInformes()
     printf(":::::::::::::::::::::::::::::::::::::::\n\n");
     printf("  1- Promedio y total de los Importes de los juegos alquilados.\n");
     printf("  2- Cantidad de juegos cuyo importe NO supera el promedio del item anterior.\n");
-<<<<<<< HEAD
-    printf("  3- \n");
-    printf("  4- \n");
-=======
     printf("  3- Listar todos los clientes que alquilaron un juego determinado.\n");
     printf("  4- Listar todos los juegos que fueron alquilados por un cliente.\n");
->>>>>>> refs/remotes/origin/master
     printf("  5- \n");
     printf("  6- \n");
     printf("  7- \n");
     printf("  8- \n");
     printf("  9- Listar todos los juegos ordenados por Importe (descendente). Metodo Burbujero.\n");
-<<<<<<< HEAD
-    printf("  10- Listar todos los clientes ordenados por APellido (ascendente). Metodo Insercion.\n");
-=======
     printf("  10- Listar todos los clientes ordenados por Apellido (ascendente). Metodo Insercion.\n");
->>>>>>> refs/remotes/origin/master
     printf("  11- Salir\n");
     printf("\n:::::::::::::::::::::::::::::::::::::::\n\n");
     option = getInt("Ingrese opcion: ");
@@ -57,17 +48,11 @@ void abmInformes(eJuego juegos[], int tamaniojuegos, eCliente clientes[], int ta
             system("pause");
             break;
         case 3:
-<<<<<<< HEAD
-            system("pause");
-            break;
-        case 4:
-=======
             listarClientesPorJuego(juegos, tamaniojuegos, clientes, tamanioClientes, alquileres, tamanioAlquileres);
             system("pause");
             break;
         case 4:
             listarJuegosPorCliente(juegos, tamaniojuegos, clientes, tamanioClientes, alquileres, tamanioAlquileres);
->>>>>>> refs/remotes/origin/master
             system("pause");
             break;
 
@@ -155,8 +140,6 @@ void cantidadJuegosNoSuperanPromedio(eJuego juegos[], int tamanioJuegos)
 }
 
 
-<<<<<<< HEAD
-=======
 void listarClientesPorJuego(eJuego juegos[], int tamaniojuegos, eCliente clientes[], int tamanioClientes, eAlquiler alquileres[], int tamanioAlquileres)
 {
     int idJuego;
@@ -234,7 +217,6 @@ void listarJuegosPorCliente(eJuego juegos[], int tamaniojuegos, eCliente cliente
     printf("\n");
 }
 
->>>>>>> refs/remotes/origin/master
 int elegirCliente(eCliente clientes[], int tamanioClientes)
 {
     int idCliente;

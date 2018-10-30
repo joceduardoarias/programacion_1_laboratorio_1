@@ -37,11 +37,7 @@
 
 1539144108 d:\n_alegria\programacion_1_laboratorio_1\parcial\alegria.nestor.1a\clientes.h
 
-<<<<<<< HEAD
-1539181077 source:d:\n_alegria\programacion_1_laboratorio_1\parcial\alegria.nestor.1a\alquileres.c
-=======
 1539144106 source:d:\n_alegria\programacion_1_laboratorio_1\parcial\alegria.nestor.1a\alquileres.c
->>>>>>> refs/remotes/origin/master
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -107,11 +103,7 @@
 	<string.h>
 	<ctype.h>
 
-<<<<<<< HEAD
-1539184682 source:d:\n_alegria\programacion_1_laboratorio_1\parcial\alegria.nestor.1a\informes.c
-=======
 1539179031 source:d:\n_alegria\programacion_1_laboratorio_1\parcial\alegria.nestor.1a\informes.c
->>>>>>> refs/remotes/origin/master
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -121,9 +113,6 @@
 	"informes.h"
 	"utn.h"
 
-<<<<<<< HEAD
-1539179784 d:\n_alegria\programacion_1_laboratorio_1\parcial\alegria.nestor.1a\informes.h
-=======
 1539178135 d:\n_alegria\programacion_1_laboratorio_1\parcial\alegria.nestor.1a\informes.h
 
 1539206584 source:c:\users\usuario\desktop\programacion_1_laboratorio_1\parcial\alegria.nestor.1a\alquileres.c
@@ -189,5 +178,4 @@
 	<time.h>
 	<string.h>
 	<ctype.h>
->>>>>>> refs/remotes/origin/master
 

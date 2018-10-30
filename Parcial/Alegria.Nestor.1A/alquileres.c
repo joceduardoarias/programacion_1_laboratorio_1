@@ -17,11 +17,7 @@ int isEmpty;
 void hardcodeoAlquileres(eAlquiler alquileres[])
 {
     alquileres[0].idAlquiler = 1;
-<<<<<<< HEAD
-    alquileres[0].codigoJuego = 1;
-=======
     alquileres[0].codigoJuego = 2;
->>>>>>> refs/remotes/origin/master
     alquileres[0].codigoCliente = 2;
     alquileres[0].fechaAlquiler.dia = 10;
     alquileres[0].fechaAlquiler.mes = 02;
@@ -51,8 +47,6 @@ void hardcodeoAlquileres(eAlquiler alquileres[])
     alquileres[3].fechaAlquiler.mes = 10;
     alquileres[3].fechaAlquiler.anio = 2017;
     alquileres[3].isEmpty = ACTIVO;
-<<<<<<< HEAD
-=======
 
     alquileres[4].idAlquiler = 5;
     alquileres[4].codigoJuego = 2;
@@ -61,7 +55,6 @@ void hardcodeoAlquileres(eAlquiler alquileres[])
     alquileres[4].fechaAlquiler.mes = 10;
     alquileres[4].fechaAlquiler.anio = 2018;
     alquileres[4].isEmpty = ACTIVO;
->>>>>>> refs/remotes/origin/master
 }
 
 int getNextIdAlquiler(eAlquiler alquileres[],int tamanioAlquiler)
@@ -217,7 +210,6 @@ void mostrarAlquiler(eJuego juegos[], int tamaniojuegos, eCliente clientes[], in
     for(int i = 0; i< tamanioAlquileres; i++)
     {
         for(int j = 0; j<tamanioClientes; j++)
-<<<<<<< HEAD
         {
             if(alquileres[indiceAlquiler].codigoCliente == clientes[j].idCliente)
             {
@@ -233,23 +225,6 @@ void mostrarAlquiler(eJuego juegos[], int tamaniojuegos, eCliente clientes[], in
                 break;
             }
         }
-=======
-        {
-            if(alquileres[indiceAlquiler].codigoCliente == clientes[j].idCliente)
-            {
-                strcpy(nombreCliente, clientes[j].nombre);
-                break;
-            }
-        }
-        for(int k = 0; k<tamaniojuegos; k++)
-        {
-            if(alquileres[indiceAlquiler].codigoJuego == juegos[k].idJuego)
-            {
-                strcpy(descripcionJuego, juegos[k].descripcion);
-                break;
-            }
-        }
->>>>>>> refs/remotes/origin/master
 
 
     }
@@ -301,19 +276,11 @@ void bajaAlquiler(eJuego juegos[], int tamaniojuegos, eCliente clientes[], int t
     indice = buscarAlquiler(alquileres, tamanioAlquileres, idAlquiler);
 
     if( indice == -1)
-<<<<<<< HEAD
     {
         printf("No hay ningun alquiler con el ID %d\n\n", idAlquiler);
     }
     else
     {
-=======
-    {
-        printf("No hay ningun alquiler con el ID %d\n\n", idAlquiler);
-    }
-    else
-    {
->>>>>>> refs/remotes/origin/master
         mostrarAlquiler(juegos, tamaniojuegos, clientes, tamanioClientes, alquileres, tamanioAlquileres, indice);
         printf("\nSe eliminara el alquiler.\n");
         confirmacion = getValidChar("\nConfirma baja del alquiler (s/n)?: ", "Error al ingresar opcion. Reintente.\n\n", 's', 'n');
